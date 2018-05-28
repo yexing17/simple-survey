@@ -95,7 +95,6 @@ public class ServletQuestionnaire extends HttpServlet {
             String qn_id = (String) request.getParameter("id");
 
         }
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
