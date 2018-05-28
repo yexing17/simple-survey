@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+           version="3.1">
+    <!-- servlet start -->
+
+    <!-- setting servlet for validated codes -->
+    <servlet>
+        <servlet-name>ImageValidateServlet</servlet-name>
+        <servlet-class>servlet.util.ImageCaptchaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImageValidateServlet</servlet-name>
+        <url-pattern>/servlet-generate-validatecode</url-pattern>
+    </servlet-mapping>
+
+    <!-- servlet for user auth -->
+    <servlet>
+        <servlet-name>UserAuth</servlet-name>
+        <servlet-class>servlet.user.UserAuth</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserAuth</servlet-name>
+        <url-pattern>/user-auth</url-pattern>
+    </servlet-mapping>
+
+    <!-- servlet for user auth -->
+    <servlet>
+        <servlet-name>CreateUser</servlet-name>
+        <servlet-class>servlet.user.CreateUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateUser</servlet-name>
+        <url-pattern>/create-user</url-pattern>
+    </servlet-mapping>
+
+    <!-- servlet for questionnaire -->
+    <servlet>
+        <servlet-name>Questionnaire</servlet-name>
+        <servlet-class>servlet.qn.ServletQuestionnaire</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Questionnaire</servlet-name>
+        <url-pattern>/questionnaire.action</url-pattern>
+    </servlet-mapping>
+    <!-- servlet end -->
+
+    <!-- filter start -->
+    <!-- setting filter for chinese(or other language not in unicode) to encoding to utf-8 -->
+    <filter>
+        <filter-name>SetCharacterEncodingFilter</filter-name>
+        <filter-class>filter.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>SetCharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- filter end -->
+</web-app>
+

@@ -1,0 +1,30 @@
+{
+  "qn_id": 11,
+  "questions": [
+    {
+      "question": "4",
+      "options": [
+        {
+          "mark": "A",
+          "content": "4"
+        },
+        {
+          "mark": "B",
+          "content": "4"
+        },
+        {
+          "mark": "C",
+          "content": "4"
+        },
+        {
+          "mark": "D",
+          "content": "4"
+        }
+      ],
+      "type": "slc",
+      "question_id": 10
+    }
+  ],
+  "description": "4",
+  "title": "4"
+}

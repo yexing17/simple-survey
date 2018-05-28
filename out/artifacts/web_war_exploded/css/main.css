@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    /*上面设置之后元素和浏览器界面直接不再留空*/
+}
+
+.header {
+    display: block;
+}
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    position: fixed;
+    /*bottom: 0;*/
+    width: 100%;
+}
+
+.header li {
+    float: left;
+}
+
+.header li a {
+    display: block;
+    width: 90px;
+    padding: 16px 14px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.header li a:hover {
+    color: white;
+    background-color: #8d8d8d;
+}
+
+.content li a {
+    display: block;
+    width: 150px;
+    padding: 16px 14px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    clear: left;
+}
