@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="mysql-connector-java-5.1.44-bin">
+    <CLASSES>
+      <root url="jar://D:/Download/WindowsDev/java-lib/jdbc-drivers/MySQL Connector/J/5.1.44/mysql-connector-java-5.1.44-bin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
