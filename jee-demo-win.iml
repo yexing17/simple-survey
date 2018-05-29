@@ -24,6 +24,5 @@
     <orderEntry type="library" name="json-simple-1.1.1" level="project" />
     <orderEntry type="library" name="jstl" level="project" />
     <orderEntry type="library" name="standard" level="project" />
-    <orderEntry type="library" name="json-taglib-0.4.1" level="project" />
   </component>
 </module>
