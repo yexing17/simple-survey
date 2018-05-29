@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class MySQLHelper {
-    private static String url = "jdbc:mysql://jd-bj-0.hisun.ml:3306/qnqnqn";
+    private static String url = "jdbc:mysql://jd-bj-0.hisun.ml:3306/qnqnqn?useUnicode=true&characterEncoding=utf8";
     private static String user = "qnqnqn";
     private static String password = "qnqnqn233";
     private static Connection connection = null;

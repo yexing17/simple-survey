@@ -21,11 +21,10 @@ public class ServletQuestionnaire extends HttpServlet {
 
         QuestionnaireDao dao = new QuestionnaireDao();
 
-
-        int user_id = Integer.parseInt((String) request.getSession().getAttribute("user_id"));
         // 这里还缺少一个当 action 为 null 时的判定,下面都是使用 Objects.equals 这个静态方法来规避风险
 
         if (Objects.equals(action, "add")) {
+            int user_id = Integer.parseInt((String) request.getSession().getAttribute("user_id"));
             // 计算题目数量
             int question_count = 0;
             while (request.getParameter("question" + String.valueOf(question_count + 1)) != null) {
@@ -85,15 +84,20 @@ public class ServletQuestionnaire extends HttpServlet {
             questionnaire.put("questions", questions);
 
             dao.addQuestionnaire(questionnaire);
+
+            response.sendRedirect("/user/list.jsp");
         }
         else if (Objects.equals(action, "list")) {
+            int user_id = Integer.parseInt((String) request.getSession().getAttribute("user_id"));
             ArrayList<Questionnaire> qns = (ArrayList<Questionnaire>) dao.getAllQuestionnaireByUserId(user_id);
             request.getSession().setAttribute("qns", qns);
             response.sendRedirect("/user/list.jsp");
         }
         else if (Objects.equals(action, "get")) {
-            String qn_id = (String) request.getParameter("id");
-
+            int qn_id = Integer.parseInt((String) request.getSession().getAttribute("qn_id"));
+            JSONObject qn = dao.getQuestionnaireByQnId(qn_id);
+            request.getSession().setAttribute("qn", qn);
+            response.sendRedirect("survey.jsp?id=" + qn_id);
         }
     }
 
