@@ -57,7 +57,7 @@
 <body class="login-page">
 <!-- Start #login -->
 <div id="login" class="animated bounceIn">
-    <img id="logo" src="assets/img/logo-new.jpg" alt="sprFlat Logo">
+    <a href="/"><img id="logo" src="assets/img/logo-new.jpg" alt="sprFlat Logo"></a>
     <!-- Start .login-wrapper -->
     <div class="login-wrapper">
         <ul id="myTab" class="nav nav-tabs nav-justified bn">
