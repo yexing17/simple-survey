@@ -34,14 +34,14 @@ public class ServletQuestionnaire extends HttpServlet {
             }
 
             // get the meta data
-            String title = (String)request.getParameter("title");
-            String description = (String)request.getParameter("description");
+            String title = (String) request.getParameter("title");
+            String description = (String) request.getParameter("description");
 
             JSONArray questions = new JSONArray();
 
             for (int i = 0; i < question_count; i++) {
                 JSONObject question = new JSONObject();
-                String question_content = (String)request.getParameter("question" + String.valueOf(i + 1));
+                String question_content = (String) request.getParameter("question" + String.valueOf(i + 1));
                 String type = "slc";
                 JSONArray options = new JSONArray();
                 if (request.getParameter("q" + String.valueOf(i + 1) + "m1") != null) {
@@ -51,24 +51,20 @@ public class ServletQuestionnaire extends HttpServlet {
                         String mark = "";
                         if (j == 0) {
                             mark = "A";
-                        }
-                        else if (j == 1){
+                        } else if (j == 1) {
                             mark = "B";
-                        }
-                        else if (j == 2) {
+                        } else if (j == 2) {
                             mark = "C";
-                        }
-                        else if (j == 3) {
+                        } else if (j == 3) {
                             mark = "D";
                         }
-                        String content = (String)request.getParameter("q" + String.valueOf(i + 1) + "m" + String.valueOf(j + 1));
+                        String content = (String) request.getParameter("q" + String.valueOf(i + 1) + "m" + String.valueOf(j + 1));
                         option.put("mark", mark);
                         option.put("content", content);
 
                         options.add(option);
                     }
-                }
-                else {
+                } else {
                     type = "blk";
                 }
                 question.put("question", question_content);
@@ -88,49 +84,16 @@ public class ServletQuestionnaire extends HttpServlet {
             dao.addQuestionnaire(questionnaire);
 
             response.sendRedirect("/user/list.jsp");
-        }
-        else if (Objects.equals(action, "list")) {
+        } else if (Objects.equals(action, "list")) {
             int user_id = Integer.parseInt((String) request.getSession().getAttribute("user_id"));
             ArrayList<Questionnaire> qns = (ArrayList<Questionnaire>) dao.getAllQuestionnaireByUserId(user_id);
             request.getSession().setAttribute("qns", qns);
             response.sendRedirect("/user/list.jsp");
-        }
-        else if (Objects.equals(action, "get")) {
+        } else if (Objects.equals(action, "get")) {
             int qn_id = Integer.parseInt((String) request.getSession().getAttribute("qn_id"));
             JSONObject qn = dao.getQuestionnaireByQnId(qn_id);
             request.getSession().setAttribute("qn", qn);
             response.sendRedirect("survey.jsp?id=" + qn_id);
-        }
-        else if (Objects.equals(action, "submit")) {
-            JSONObject receipt = new JSONObject();
-
-            int qn_id = Integer.parseInt((String)request.getSession().getAttribute("qn_id"));
-            String submit_ip = CommonHelper.getIp(request);
-
-            System.out.println(submit_ip);
-
-            JSONArray answers = new JSONArray();
-            // 这里获取到使用 c:set 标签生成的数字默认是 long 类型的
-            int count = (int)(long)request.getSession().getAttribute("count");
-            System.out.println(count);
-            // 因为 count 是写在循环语句的最尾部自增的,所有 count 的数值会比所有真是用于题目标号的数值 +1
-            for (int i = 1; i < count; i++) {
-                JSONObject answer = new JSONObject();
-
-                int question_id = Integer.parseInt(request.getParameter("c" + i + "qid"));
-                String answer_content = request.getParameter("c" + i + "a");
-
-                answer.put("question_id", question_id);
-                answer.put("answer_content", answer_content);
-
-                answers.add(answer);
-            }
-
-            receipt.put("qn_id", qn_id);
-            receipt.put("submit_ip", submit_ip);
-            receipt.put("answers", answers);
-
-            System.out.println(receipt);
         }
     }
 

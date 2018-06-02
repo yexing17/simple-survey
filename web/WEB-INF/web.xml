@@ -45,7 +45,20 @@
         <servlet-name>Questionnaire</servlet-name>
         <url-pattern>/questionnaire.action</url-pattern>
     </servlet-mapping>
+
+    <!-- servlet for questionnaire -->
+    <servlet>
+        <servlet-name>Receipt</servlet-name>
+        <servlet-class>servlet.receipt.ServletReceipt</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Receipt</servlet-name>
+        <url-pattern>/receipt.action</url-pattern>
+    </servlet-mapping>
+
     <!-- servlet end -->
+
+
 
     <!-- filter start -->
     <!-- setting filter for chinese(or other language not in unicode) to encoding to utf-8 -->
