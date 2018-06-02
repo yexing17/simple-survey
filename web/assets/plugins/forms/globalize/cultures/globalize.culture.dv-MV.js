@@ -11,58 +11,58 @@
  * Translation: bugs found in this file need to be fixed in the generator
  */
 
-(function( window, undefined ) {
+(function (window, undefined) {
 
-var Globalize;
+    var Globalize;
 
-if ( typeof require !== "undefined" &&
-	typeof exports !== "undefined" &&
-	typeof module !== "undefined" ) {
-	// Assume CommonJS
-	Globalize = require( "globalize" );
-} else {
-	// Global variable
-	Globalize = window.Globalize;
-}
+    if (typeof require !== "undefined" &&
+        typeof exports !== "undefined" &&
+        typeof module !== "undefined") {
+        // Assume CommonJS
+        Globalize = require("globalize");
+    } else {
+        // Global variable
+        Globalize = window.Globalize;
+    }
 
-Globalize.addCultureInfo( "dv-MV", "default", {
-	name: "dv-MV",
-	englishName: "Divehi (Maldives)",
-	nativeName: "ދިވެހިބަސް (ދިވެހި ރާއްޖެ)",
-	language: "dv",
-	isRTL: true,
-	numberFormat: {
-		currency: {
-			pattern: ["n $-","n $"],
-			symbol: "ރ."
-		}
-	},
-	calendars: {
-		standard: {
-			name: "Hijri",
-			days: {
-				names: ["އާދީއްތަ","ހޯމަ","އަންގާރަ","ބުދަ","ބުރާސްފަތި","ހުކުރު","ހޮނިހިރު"],
-				namesAbbr: ["އާދީއްތަ","ހޯމަ","އަންގާރަ","ބުދަ","ބުރާސްފަތި","ހުކުރު","ހޮނިހިރު"],
-				namesShort: ["އާ","ހޯ","އަ","ބު","ބު","ހު","ހޮ"]
-			},
-			months: {
-				names: ["މުޙައްރަމް","ޞަފަރު","ރަބީޢުލްއައްވަލް","ރަބީޢުލްއާޚިރު","ޖުމާދަލްއޫލާ","ޖުމާދަލްއާޚިރާ","ރަޖަބް","ޝަޢްބާން","ރަމަޟާން","ޝައްވާލް","ޛުލްޤަޢިދާ","ޛުލްޙިއްޖާ",""],
-				namesAbbr: ["މުޙައްރަމް","ޞަފަރު","ރަބީޢުލްއައްވަލް","ރަބީޢުލްއާޚިރު","ޖުމާދަލްއޫލާ","ޖުމާދަލްއާޚިރާ","ރަޖަބް","ޝަޢްބާން","ރަމަޟާން","ޝައްވާލް","ޛުލްޤަޢިދާ","ޛުލްޙިއްޖާ",""]
-			},
-			AM: ["މކ","މކ","މކ"],
-			PM: ["މފ","މފ","މފ"],
-			eras: [{"name":"ހިޖްރީ","start":null,"offset":0}],
-			twoDigitYearMax: 1451,
-			patterns: {
-				d: "dd/MM/yy",
-				D: "dd/MM/yyyy",
-				t: "HH:mm",
-				T: "HH:mm:ss",
-				f: "dd/MM/yyyy HH:mm",
-				F: "dd/MM/yyyy HH:mm:ss",
-				M: "dd MMMM"
-			},
-			convert: {
+    Globalize.addCultureInfo("dv-MV", "default", {
+        name: "dv-MV",
+        englishName: "Divehi (Maldives)",
+        nativeName: "ދިވެހިބަސް (ދިވެހި ރާއްޖެ)",
+        language: "dv",
+        isRTL: true,
+        numberFormat: {
+            currency: {
+                pattern: ["n $-", "n $"],
+                symbol: "ރ."
+            }
+        },
+        calendars: {
+            standard: {
+                name: "Hijri",
+                days: {
+                    names: ["އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު"],
+                    namesAbbr: ["އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު"],
+                    namesShort: ["އާ", "ހޯ", "އަ", "ބު", "ބު", "ހު", "ހޮ"]
+                },
+                months: {
+                    names: ["މުޙައްރަމް", "ޞަފަރު", "ރަބީޢުލްއައްވަލް", "ރަބީޢުލްއާޚިރު", "ޖުމާދަލްއޫލާ", "ޖުމާދަލްއާޚިރާ", "ރަޖަބް", "ޝަޢްބާން", "ރަމަޟާން", "ޝައްވާލް", "ޛުލްޤަޢިދާ", "ޛުލްޙިއްޖާ", ""],
+                    namesAbbr: ["މުޙައްރަމް", "ޞަފަރު", "ރަބީޢުލްއައްވަލް", "ރަބީޢުލްއާޚިރު", "ޖުމާދަލްއޫލާ", "ޖުމާދަލްއާޚިރާ", "ރަޖަބް", "ޝަޢްބާން", "ރަމަޟާން", "ޝައްވާލް", "ޛުލްޤަޢިދާ", "ޛުލްޙިއްޖާ", ""]
+                },
+                AM: ["މކ", "މކ", "މކ"],
+                PM: ["މފ", "މފ", "މފ"],
+                eras: [{"name": "ހިޖްރީ", "start": null, "offset": 0}],
+                twoDigitYearMax: 1451,
+                patterns: {
+                    d: "dd/MM/yy",
+                    D: "dd/MM/yyyy",
+                    t: "HH:mm",
+                    T: "HH:mm:ss",
+                    f: "dd/MM/yyyy HH:mm",
+                    F: "dd/MM/yyyy HH:mm:ss",
+                    M: "dd MMMM"
+                },
+                convert: {
                     // Adapted to Script from System.Globalization.HijriCalendar
                     ticks1970: 62135596800000,
                     // number of days leading up to each month
@@ -74,7 +74,7 @@ Globalize.addCultureInfo( "dv-MV", "default", {
                     // countries/regions. May be dynamically adjusted based on user preference, but should
                     // remain in the range of -2 to 2, inclusive.
                     hijriAdjustment: 0,
-                    toGregorian: function(hyear, hmonth, hday) {
+                    toGregorian: function (hyear, hmonth, hday) {
                         var daysSinceJan0101 = this.daysToYear(hyear) + this.monthDays[hmonth] + hday - 1 - this.hijriAdjustment;
                         // 86400000 = ticks per day
                         var gdate = new Date(daysSinceJan0101 * 86400000 - this.ticks1970);
@@ -84,9 +84,9 @@ Globalize.addCultureInfo( "dv-MV", "default", {
                         gdate.setMinutes(gdate.getMinutes() + gdate.getTimezoneOffset());
                         return gdate;
                     },
-                    fromGregorian: function(gdate) {
+                    fromGregorian: function (gdate) {
                         if ((gdate < this.minDate) || (gdate > this.maxDate)) return null;
-                        var ticks = this.ticks1970 + (gdate-0) - gdate.getTimezoneOffset() * 60000,
+                        var ticks = this.ticks1970 + (gdate - 0) - gdate.getTimezoneOffset() * 60000,
                             daysSinceJan0101 = Math.floor(ticks / 86400000) + 1 + this.hijriAdjustment;
                         // very particular formula determined by someone smart, adapted from the server-side implementation.
                         // it approximates the hijri year.
@@ -119,7 +119,7 @@ Globalize.addCultureInfo( "dv-MV", "default", {
                         hday = daysIntoYear - this.monthDays[hmonth];
                         return [hyear, hmonth, hday];
                     },
-                    daysToYear: function(year) {
+                    daysToYear: function (year) {
                         // calculates how many days since Jan 1, 0001
                         var yearsToYear30 = Math.floor((year - 1) / 30) * 30,
                             yearsInto30 = year - yearsToYear30 - 1,
@@ -130,35 +130,35 @@ Globalize.addCultureInfo( "dv-MV", "default", {
                         }
                         return days;
                     },
-                    isLeapYear: function(year) {
+                    isLeapYear: function (year) {
                         return ((((year * 11) + 14) % 30) < 11);
                     }
-			}
-		},
-		Gregorian_Localized: {
-			days: {
-				names: ["އާދީއްތަ","ހޯމަ","އަންގާރަ","ބުދަ","ބުރާސްފަތި","ހުކުރު","ހޮނިހިރު"],
-				namesAbbr: ["އާދީއްތަ","ހޯމަ","އަންގާރަ","ބުދަ","ބުރާސްފަތި","ހުކުރު","ހޮނިހިރު"],
-				namesShort: ["އާ","ހޯ","އަ","ބު","ބު","ހު","ހޮ"]
-			},
-			months: {
-				names: ["ޖަނަވަރީ","ފެބްރުއަރީ","މާޗް","އޭޕްރިލް","މެއި","ޖޫން","ޖުލައި","އޯގަސްޓް","ސެޕްޓެމްބަރ","އޮކްޓޯބަރ","ނޮވެމްބަރ","ޑިސެމްބަރ",""],
-				namesAbbr: ["ޖަނަވަރީ","ފެބްރުއަރީ","މާޗް","އޭޕްރިލް","މެއި","ޖޫން","ޖުލައި","އޯގަސްޓް","ސެޕްޓެމްބަރ","އޮކްޓޯބަރ","ނޮވެމްބަރ","ޑިސެމްބަރ",""]
-			},
-			AM: ["މކ","މކ","މކ"],
-			PM: ["މފ","މފ","މފ"],
-			eras: [{"name":"މީލާދީ","start":null,"offset":0}],
-			patterns: {
-				d: "dd/MM/yy",
-				D: "ddd, yyyy MMMM dd",
-				t: "HH:mm",
-				T: "HH:mm:ss",
-				f: "ddd, yyyy MMMM dd HH:mm",
-				F: "ddd, yyyy MMMM dd HH:mm:ss",
-				Y: "yyyy, MMMM"
-			}
-		}
-	}
-});
+                }
+            },
+            Gregorian_Localized: {
+                days: {
+                    names: ["އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު"],
+                    namesAbbr: ["އާދީއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު"],
+                    namesShort: ["އާ", "ހޯ", "އަ", "ބު", "ބު", "ހު", "ހޮ"]
+                },
+                months: {
+                    names: ["ޖަނަވަރީ", "ފެބްރުއަރީ", "މާޗް", "އޭޕްރިލް", "މެއި", "ޖޫން", "ޖުލައި", "އޯގަސްޓް", "ސެޕްޓެމްބަރ", "އޮކްޓޯބަރ", "ނޮވެމްބަރ", "ޑިސެމްބަރ", ""],
+                    namesAbbr: ["ޖަނަވަރީ", "ފެބްރުއަރީ", "މާޗް", "އޭޕްރިލް", "މެއި", "ޖޫން", "ޖުލައި", "އޯގަސްޓް", "ސެޕްޓެމްބަރ", "އޮކްޓޯބަރ", "ނޮވެމްބަރ", "ޑިސެމްބަރ", ""]
+                },
+                AM: ["މކ", "މކ", "މކ"],
+                PM: ["މފ", "މފ", "މފ"],
+                eras: [{"name": "މީލާދީ", "start": null, "offset": 0}],
+                patterns: {
+                    d: "dd/MM/yy",
+                    D: "ddd, yyyy MMMM dd",
+                    t: "HH:mm",
+                    T: "HH:mm:ss",
+                    f: "ddd, yyyy MMMM dd HH:mm",
+                    F: "ddd, yyyy MMMM dd HH:mm:ss",
+                    Y: "yyyy, MMMM"
+                }
+            }
+        }
+    });
 
-}( this ));
+}(this));

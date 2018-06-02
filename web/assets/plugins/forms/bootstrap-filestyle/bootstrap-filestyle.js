@@ -8,7 +8,7 @@
  */
 (function ($) {
     "use strict";
-    
+
     var Filestyle = function (element, options) {
         this.options = options;
         this.$elementFilestyle = [];
@@ -128,7 +128,7 @@
                     colorIcon = 'icon-white ';
                 }
 
-                return '<i class="'+this.options.classIcon+'"></i> ';
+                return '<i class="' + this.options.classIcon + '"></i> ';
             } else {
                 return '';
             }
@@ -136,7 +136,7 @@
 
         htmlInput: function () {
             if (this.options.input) {
-                return '<input type="text" class="'+this.options.classInput+'" disabled> ';
+                return '<input type="text" class="' + this.options.classInput + '" disabled> ';
             } else {
                 return '';
             }
@@ -149,21 +149,21 @@
                 files = [];
 
             if (id === '' || !id) {
-                id = 'filestyle-'+$('.bootstrap-filestyle').length;
+                id = 'filestyle-' + $('.bootstrap-filestyle').length;
                 this.$element.attr({'id': id});
             }
 
-            html = this.htmlInput()+
-                 '<label for="'+id+'" class="'+this.options.classButton+'">'+
-                    this.htmlIcon()+
-                    '<span>'+this.options.buttonText+'</span>'+
-                 '</label>';
+            html = this.htmlInput() +
+                '<label for="' + id + '" class="' + this.options.classButton + '">' +
+                this.htmlIcon() +
+                '<span>' + this.options.buttonText + '</span>' +
+                '</label>';
 
-            this.$elementFilestyle = $('<div class="bootstrap-filestyle" style="display: inline;">'+html+'</div>');
+            this.$elementFilestyle = $('<div class="bootstrap-filestyle" style="display: inline;">' + html + '</div>');
 
             // hidding input file and add filestyle
             this.$element
-                .css({'position':'fixed','left':'-500px'})
+                .css({'position': 'fixed', 'left': '-500px'})
                 .after(this.$elementFilestyle);
 
             // Getting input file value

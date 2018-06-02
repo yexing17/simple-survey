@@ -4,175 +4,176 @@
 ;
 
 
-
-window.Modernizr = (function( window, document, undefined ) {
+window.Modernizr = (function (window, document, undefined) {
 
     var version = '2.6.1',
 
-    Modernizr = {},
+        Modernizr = {},
 
 
-    docElement = document.documentElement,
+        docElement = document.documentElement,
 
-    mod = 'modernizr',
-    modElem = document.createElement(mod),
-    mStyle = modElem.style,
+        mod = 'modernizr',
+        modElem = document.createElement(mod),
+        mStyle = modElem.style,
 
-    inputElem  ,
-
-
-    toString = {}.toString,    tests = {},
-    inputs = {},
-    attrs = {},
-
-    classes = [],
-
-    slice = classes.slice,
-
-    featureName, 
+        inputElem,
 
 
-    injectElementWithStyles = function( rule, callback, nodes, testnames ) {
+        toString = {}.toString, tests = {},
+        inputs = {},
+        attrs = {},
 
-      var style, ret, node,
-          div = document.createElement('div'),
+        classes = [],
+
+        slice = classes.slice,
+
+        featureName,
+
+
+        injectElementWithStyles = function (rule, callback, nodes, testnames) {
+
+            var style, ret, node,
+                div = document.createElement('div'),
                 body = document.body,
                 fakeBody = body ? body : document.createElement('body');
 
-      if ( parseInt(nodes, 10) ) {
-                      while ( nodes-- ) {
-              node = document.createElement('div');
-              node.id = testnames ? testnames[nodes] : mod + (nodes + 1);
-              div.appendChild(node);
-          }
-      }
+            if (parseInt(nodes, 10)) {
+                while (nodes--) {
+                    node = document.createElement('div');
+                    node.id = testnames ? testnames[nodes] : mod + (nodes + 1);
+                    div.appendChild(node);
+                }
+            }
 
-                style = ['&#173;','<style id="s', mod, '">', rule, '</style>'].join('');
-      div.id = mod;
-          (body ? div : fakeBody).innerHTML += style;
-      fakeBody.appendChild(div);
-      if ( !body ) {
+            style = ['&#173;', '<style id="s', mod, '">', rule, '</style>'].join('');
+            div.id = mod;
+            (body ? div : fakeBody).innerHTML += style;
+            fakeBody.appendChild(div);
+            if (!body) {
                 fakeBody.style.background = "";
-          docElement.appendChild(fakeBody);
-      }
+                docElement.appendChild(fakeBody);
+            }
 
-      ret = callback(div, rule);
-        !body ? fakeBody.parentNode.removeChild(fakeBody) : div.parentNode.removeChild(div);
+            ret = callback(div, rule);
+            !body ? fakeBody.parentNode.removeChild(fakeBody) : div.parentNode.removeChild(div);
 
-      return !!ret;
+            return !!ret;
 
-    },
+        },
 
-    testMediaQuery = function( mq ) {
+        testMediaQuery = function (mq) {
 
-      var matchMedia = window.matchMedia || window.msMatchMedia;
-      if ( matchMedia ) {
-        return matchMedia(mq).matches;
-      }
+            var matchMedia = window.matchMedia || window.msMatchMedia;
+            if (matchMedia) {
+                return matchMedia(mq).matches;
+            }
 
-      var bool;
+            var bool;
 
-      injectElementWithStyles('@media ' + mq + ' { #' + mod + ' { position: absolute; } }', function( node ) {
-        bool = (window.getComputedStyle ?
-                  getComputedStyle(node, null) :
-                  node.currentStyle)['position'] == 'absolute';
-      });
+            injectElementWithStyles('@media ' + mq + ' { #' + mod + ' { position: absolute; } }', function (node) {
+                bool = (window.getComputedStyle ?
+                    getComputedStyle(node, null) :
+                    node.currentStyle)['position'] == 'absolute';
+            });
 
-      return bool;
+            return bool;
 
-     },
-    _hasOwnProperty = ({}).hasOwnProperty, hasOwnProp;
+        },
+        _hasOwnProperty = ({}).hasOwnProperty, hasOwnProp;
 
-    if ( !is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined') ) {
-      hasOwnProp = function (object, property) {
-        return _hasOwnProperty.call(object, property);
-      };
+    if (!is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined')) {
+        hasOwnProp = function (object, property) {
+            return _hasOwnProperty.call(object, property);
+        };
     }
     else {
-      hasOwnProp = function (object, property) { 
-        return ((property in object) && is(object.constructor.prototype[property], 'undefined'));
-      };
+        hasOwnProp = function (object, property) {
+            return ((property in object) && is(object.constructor.prototype[property], 'undefined'));
+        };
     }
 
 
     if (!Function.prototype.bind) {
-      Function.prototype.bind = function bind(that) {
+        Function.prototype.bind = function bind(that) {
 
-        var target = this;
+            var target = this;
 
-        if (typeof target != "function") {
-            throw new TypeError();
-        }
-
-        var args = slice.call(arguments, 1),
-            bound = function () {
-
-            if (this instanceof bound) {
-
-              var F = function(){};
-              F.prototype = target.prototype;
-              var self = new F();
-
-              var result = target.apply(
-                  self,
-                  args.concat(slice.call(arguments))
-              );
-              if (Object(result) === result) {
-                  return result;
-              }
-              return self;
-
-            } else {
-
-              return target.apply(
-                  that,
-                  args.concat(slice.call(arguments))
-              );
-
+            if (typeof target != "function") {
+                throw new TypeError();
             }
 
-        };
+            var args = slice.call(arguments, 1),
+                bound = function () {
 
-        return bound;
-      };
+                    if (this instanceof bound) {
+
+                        var F = function () {
+                        };
+                        F.prototype = target.prototype;
+                        var self = new F();
+
+                        var result = target.apply(
+                            self,
+                            args.concat(slice.call(arguments))
+                        );
+                        if (Object(result) === result) {
+                            return result;
+                        }
+                        return self;
+
+                    } else {
+
+                        return target.apply(
+                            that,
+                            args.concat(slice.call(arguments))
+                        );
+
+                    }
+
+                };
+
+            return bound;
+        };
     }
 
-    function setCss( str ) {
+    function setCss(str) {
         mStyle.cssText = str;
     }
 
-    function setCssAll( str1, str2 ) {
-        return setCss(prefixes.join(str1 + ';') + ( str2 || '' ));
+    function setCssAll(str1, str2) {
+        return setCss(prefixes.join(str1 + ';') + (str2 || ''));
     }
 
-    function is( obj, type ) {
+    function is(obj, type) {
         return typeof obj === type;
     }
 
-    function contains( str, substr ) {
+    function contains(str, substr) {
         return !!~('' + str).indexOf(substr);
     }
 
 
-    function testDOMProps( props, obj, elem ) {
-        for ( var i in props ) {
+    function testDOMProps(props, obj, elem) {
+        for (var i in props) {
             var item = obj[props[i]];
-            if ( item !== undefined) {
+            if (item !== undefined) {
 
-                            if (elem === false) return props[i];
+                if (elem === false) return props[i];
 
-                            if (is(item, 'function')){
-                                return item.bind(elem || obj);
+                if (is(item, 'function')) {
+                    return item.bind(elem || obj);
                 }
 
-                            return item;
+                return item;
             }
         }
         return false;
     }
-    for ( var feature in tests ) {
-        if ( hasOwnProp(tests, feature) ) {
-                                    featureName  = feature.toLowerCase();
+
+    for (var feature in tests) {
+        if (hasOwnProp(tests, feature)) {
+            featureName = feature.toLowerCase();
             Modernizr[featureName] = tests[feature]();
 
             classes.push((Modernizr[featureName] ? '' : 'no-') + featureName);
@@ -180,44 +181,43 @@ window.Modernizr = (function( window, document, undefined ) {
     }
 
 
+    Modernizr.addTest = function (feature, test) {
+        if (typeof feature == 'object') {
+            for (var key in feature) {
+                if (hasOwnProp(feature, key)) {
+                    Modernizr.addTest(key, feature[key]);
+                }
+            }
+        } else {
 
-     Modernizr.addTest = function ( feature, test ) {
-       if ( typeof feature == 'object' ) {
-         for ( var key in feature ) {
-           if ( hasOwnProp( feature, key ) ) {
-             Modernizr.addTest( key, feature[ key ] );
-           }
-         }
-       } else {
+            feature = feature.toLowerCase();
 
-         feature = feature.toLowerCase();
+            if (Modernizr[feature] !== undefined) {
+                return Modernizr;
+            }
 
-         if ( Modernizr[feature] !== undefined ) {
-                                              return Modernizr;
-         }
+            test = typeof test == 'function' ? test() : test;
 
-         test = typeof test == 'function' ? test() : test;
+            if (enableClasses) {
+                docElement.className += ' ' + (test ? '' : 'no-') + feature;
+            }
+            Modernizr[feature] = test;
 
-         if (enableClasses) {
-           docElement.className += ' ' + (test ? '' : 'no-') + feature;
-         }
-         Modernizr[feature] = test;
+        }
 
-       }
-
-       return Modernizr; 
-     };
+        return Modernizr;
+    };
 
 
     setCss('');
     modElem = inputElem = null;
 
 
-    Modernizr._version      = version;
+    Modernizr._version = version;
 
 
-    Modernizr.mq            = testMediaQuery;
-    Modernizr.testStyles    = injectElementWithStyles;
+    Modernizr.mq = testMediaQuery;
+    Modernizr.testStyles = injectElementWithStyles;
     return Modernizr;
 
 })(this, this.document);

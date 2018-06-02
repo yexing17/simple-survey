@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- Start #header -->
 <div id="header">
     <div class="container-fluid">
@@ -26,7 +27,7 @@
                             </li>
                             <li><a href="#"><i class="st-settings"></i>设置</a>
                             </li>
-                            <li><a href="login.jsp"><i class="im-exit"></i>登出</a>
+                            <li><a href="/auth.jsp"><i class="im-exit"></i>登出</a>
                             </li>
                         </ul>
                     </li>
@@ -107,7 +108,7 @@
                     </button>
                 </form>
             </li>
-            <li><a href="index-new.jsp">Dashboard <i class="im-screen"></i></a>
+            <li><a href="index-new.jsp">用户面板<i class="im-screen"></i></a>
             </li>
             <li><a href="charts.html">Charts <i class="st-chart"></i></a>
             </li>

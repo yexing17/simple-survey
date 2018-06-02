@@ -101,7 +101,7 @@
                         res.writeHead(200, {
                             'Content-Type': req.headers.accept
                                 .indexOf('application/json') !== -1 ?
-                                        'application/json' : 'text/plain'
+                                'application/json' : 'text/plain'
                         });
                         res.end(JSON.stringify(result));
                     }
@@ -113,32 +113,32 @@
                 },
                 handler = new UploadHandler(req, res, handleResult);
             switch (req.method) {
-            case 'OPTIONS':
-                res.end();
-                break;
-            case 'HEAD':
-            case 'GET':
-                if (req.url === '/') {
-                    setNoCacheHeaders();
-                    if (req.method === 'GET') {
-                        handler.get();
+                case 'OPTIONS':
+                    res.end();
+                    break;
+                case 'HEAD':
+                case 'GET':
+                    if (req.url === '/') {
+                        setNoCacheHeaders();
+                        if (req.method === 'GET') {
+                            handler.get();
+                        } else {
+                            res.end();
+                        }
                     } else {
-                        res.end();
+                        fileServer.serve(req, res);
                     }
-                } else {
-                    fileServer.serve(req, res);
-                }
-                break;
-            case 'POST':
-                setNoCacheHeaders();
-                handler.post();
-                break;
-            case 'DELETE':
-                handler.destroy();
-                break;
-            default:
-                res.statusCode = 405;
-                res.end();
+                    break;
+                case 'POST':
+                    setNoCacheHeaders();
+                    handler.post();
+                    break;
+                case 'DELETE':
+                    handler.destroy();
+                    break;
+                default:
+                    res.statusCode = 405;
+                    res.end();
             }
         };
     fileServer.respond = function (pathname, status, _headers, files, stat, req, res, finish) {
@@ -179,8 +179,8 @@
             this.url = this.deleteUrl = baseUrl + encodeURIComponent(this.name);
             Object.keys(options.imageVersions).forEach(function (version) {
                 if (_existsSync(
-                        options.uploadDir + '/' + version + '/' + that.name
-                    )) {
+                    options.uploadDir + '/' + version + '/' + that.name
+                )) {
                     that[version + 'Url'] = baseUrl + version + '/' +
                         encodeURIComponent(that.name);
                 }
@@ -251,7 +251,7 @@
                         height: opts.height,
                         srcPath: options.uploadDir + '/' + fileInfo.name,
                         dstPath: options.uploadDir + '/' + version + '/' +
-                            fileInfo.name
+                        fileInfo.name
                     }, finish);
                 });
             }

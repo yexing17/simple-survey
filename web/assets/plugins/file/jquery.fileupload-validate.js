@@ -88,17 +88,17 @@
                     fileSize = file.size;
                 }
                 if ($.type(options.maxNumberOfFiles) === 'number' &&
-                        (settings.getNumberOfFiles() || 0) + data.files.length >
-                            options.maxNumberOfFiles) {
+                    (settings.getNumberOfFiles() || 0) + data.files.length >
+                    options.maxNumberOfFiles) {
                     file.error = settings.i18n('maxNumberOfFiles');
                 } else if (options.acceptFileTypes &&
-                        !(options.acceptFileTypes.test(file.type) ||
+                    !(options.acceptFileTypes.test(file.type) ||
                         options.acceptFileTypes.test(file.name))) {
                     file.error = settings.i18n('acceptFileTypes');
                 } else if (fileSize > options.maxFileSize) {
                     file.error = settings.i18n('maxFileSize');
                 } else if ($.type(fileSize) === 'number' &&
-                        fileSize < options.minFileSize) {
+                    fileSize < options.minFileSize) {
                     file.error = settings.i18n('minFileSize');
                 } else {
                     delete file.error;

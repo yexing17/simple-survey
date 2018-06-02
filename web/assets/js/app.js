@@ -1,28 +1,31 @@
 // make console.log safe to use
-window.console||(console={log:function(){}});
+window.console || (console = {
+    log: function () {
+    }
+});
 
 //Internet Explorer 10 in Windows 8 and Windows Phone 8 fix
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-  var msViewportStyle = document.createElement('style')
-  msViewportStyle.appendChild(
-    document.createTextNode(
-      '@-ms-viewport{width:auto!important}'
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+        document.createTextNode(
+            '@-ms-viewport{width:auto!important}'
+        )
     )
-  )
-  document.querySelector('head').appendChild(msViewportStyle)
+    document.querySelector('head').appendChild(msViewportStyle)
 }
 
 //Android stock browser
 var nua = navigator.userAgent
 var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
 if (isAndroid) {
-  $('select.form-control').removeClass('form-control').css('width', '100%')
+    $('select.form-control').removeClass('form-control').css('width', '100%')
 }
 
 //doc ready function
-$(document).ready(function() {
+$(document).ready(function () {
 
- 	//Disable certain links
+    //Disable certain links
     $('a[href^=#]').click(function (e) {
         e.preventDefault()
     })
@@ -30,11 +33,11 @@ $(document).ready(function() {
     //------------- Highlight code  -------------//
     hljs.initHighlightingOnLoad();
 
- 	//------------- Init our plugin -------------//
- 	$('body').sprFlat({
+    //------------- Init our plugin -------------//
+    $('body').sprFlat({
         //main color scheme for template
         //be sure to be same as colors on main.css or custom-variables.less
-        colors : {
+        colors: {
             white: '#fff',
             dark: '#79859b',
             red: '#f68484',
@@ -69,7 +72,7 @@ $(document).ready(function() {
             rememberToggle: true, //remember if sidebar is hided
             offCanvas: false //make sidebar offcanvas in tablet and small screens
         },
-        sideNav : {
+        sideNav: {
             hover: false, //shows subs on hover or click
             showNotificationNumbers: 'onhover',//show how many elements menu have with notifcation style values - always, onhover, never
             showArrows: true,//show arrow to indicate sub
@@ -122,25 +125,25 @@ $(document).ready(function() {
             animation: true, //animation effect for dropdown
             openEffect: 'fadeInDown',//open effect for menu see http://daneden.github.io/animate.css/
         }
- 	});
+    });
 
     //get settings object
     var sprObject = $('body').data('sprFlat');
     var settings = sprObject.settings;
 
     //------------- Bootstrap tooltips -------------//
-    $("[data-toggle=tooltip]").tooltip ({container:'body'});
-    $(".tip").tooltip ({placement: 'top', container: 'body'});
-    $(".tipR").tooltip ({placement: 'right', container: 'body'});
-    $(".tipB").tooltip ({placement: 'bottom', container: 'body'});
-    $(".tipL").tooltip ({placement: 'left', container: 'body'});
+    $("[data-toggle=tooltip]").tooltip({container: 'body'});
+    $(".tip").tooltip({placement: 'top', container: 'body'});
+    $(".tipR").tooltip({placement: 'right', container: 'body'});
+    $(".tipB").tooltip({placement: 'bottom', container: 'body'});
+    $(".tipL").tooltip({placement: 'left', container: 'body'});
     //------------- Bootstrap popovers -------------//
-    $("[data-toggle=popover]").popover ();
+    $("[data-toggle=popover]").popover();
 
     //------------- Qick post wysiwyg editor and tags -------------//
     tinymce.init({
         selector: ".wysiwyg",
-        menubar : false,
+        menubar: false,
         plugins: [
             "advlist autolink lists link image charmap print preview anchor",
             "searchreplace visualblocks code fullscreen",

@@ -7,16 +7,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>用户面板</title>
 
-<%@ include file="common-head-contents.html"%>
+<%@include file="common-head-contents.jsp"%>
 
 </head>
 <body>
 
-<%@include file="common-header-sidebar.html"%>
+<%@include file="common-header-sidebar.jsp"%>
 
 <!-- Start #content -->
 <div id="content">
@@ -84,8 +85,8 @@
                             </div>
                         </div>
                         <div class="btn-group dropdown">
-                            <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2"><i
-                                    class="ec-pencil s24"></i></a>
+                            <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2">
+                                <i class="ec-pencil s24"></i></a>
                             <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu2">
                                 <div class="option-dropdown">
                                     <div class="row">
@@ -99,15 +100,13 @@
                                             <!-- End .form-group  -->
                                             <div class="form-group">
                                                 <div class="col-lg-12">
-                                                    <textarea class="form-control wysiwyg"
-                                                              placeholder="Enter text"></textarea>
+                                                    <textarea class="form-control wysiwyg" placeholder="Enter text"></textarea>
                                                 </div>
                                             </div>
                                             <!-- End .form-group  -->
                                             <div class="form-group">
                                                 <div class="col-lg-12">
-                                                    <input type="text" class="form-control tags1"
-                                                           placeholder="Enter tags">
+                                                    <input type="text" class="form-control tags1" placeholder="Enter tags">
                                                 </div>
                                             </div>
                                             <!-- End .form-group  -->
@@ -579,6 +578,6 @@
 </div>
 <!-- End #content -->
 
-<%@ include file="common-javascripts.html"%>
+<%@ include file="common-javascripts.jsp"%>
 </body>
 </html>

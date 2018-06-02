@@ -158,7 +158,7 @@ THE SOFTWARE.
             if (opt.series.grow.active === true) {
                 var reanimate = false;
                 var j = 0;
-                
+
                 if (opt.series.grow.reanimate && growPhase === GrowPhase.PLOTTED_LAST_FRAME) {
                     // reset animation state
                     processSeriesDone = false;
@@ -253,7 +253,8 @@ THE SOFTWARE.
                     if (isReAnimation && growing.reanimate !== 'reinit') {
                         if (typeof growing.reanimate === 'function') {
                             func = growing.reanimate;
-                        } if (growing.reanimate === 'continue') {
+                        }
+                        if (growing.reanimate === 'continue') {
                             func = growFunctions.reanimate;
                         } else {// if (growing.reanimate === 'none')
                             func = growFunctions.none;
@@ -329,17 +330,17 @@ THE SOFTWARE.
 
         var lastTime = +new Date();
         var vendors = ['ms', 'moz', 'webkit', 'o'];
-        for(var x = 0; x < vendors.length && !rAF; ++x) {
-            rAF = window[vendors[x]+'RequestAnimationFrame'];
+        for (var x = 0; x < vendors.length && !rAF; ++x) {
+            rAF = window[vendors[x] + 'RequestAnimationFrame'];
 
-            cAF = window[vendors[x]+'CancelAnimationFrame'] ||
-                  window[vendors[x]+'CancelRequestAnimationFrame'];
+            cAF = window[vendors[x] + 'CancelAnimationFrame'] ||
+                window[vendors[x] + 'CancelRequestAnimationFrame'];
         }
         if (!rAF) {
-            rAF = function(callback, element) {
+            rAF = function (callback, element) {
                 var currTime = +new Date();
                 var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-                var id = window.setTimeout(function() {
+                var id = window.setTimeout(function () {
                     callback(currTime + timeToCall);
                 }, timeToCall);
                 lastTime = currTime + timeToCall;
@@ -347,7 +348,7 @@ THE SOFTWARE.
             };
         }
         if (!cAF) {
-            cAF = function(id) {
+            cAF = function (id) {
                 clearTimeout(id);
             };
         }
