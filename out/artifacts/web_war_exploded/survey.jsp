@@ -29,9 +29,9 @@
             <div>
                 <!-- 暂时想不到好的直接嗯使用 el 和 jstl 的方法,就先用原生 jsp 存进 pageContext 里面把,减少代码的耦合 -->
                 <%
-                    Object title = ((JSONObject)session.getAttribute("qn")).get("title");
-                    Object description = ((JSONObject)session.getAttribute("qn")).get("description");
-                    Object questions = ((JSONObject)session.getAttribute("qn")).get("questions");
+                    Object title = ((JSONObject) session.getAttribute("qn")).get("title");
+                    Object description = ((JSONObject) session.getAttribute("qn")).get("description");
+                    Object questions = ((JSONObject) session.getAttribute("qn")).get("questions");
 
                     pageContext.setAttribute("title", title);
                     pageContext.setAttribute("description", description);
@@ -40,45 +40,51 @@
                 <div class="welcome">${pageScope.title}</div>
                 <div>${pageScope.description}</div>
             </div>
-            <c:set var="count" value="1"/>
-            <c:forEach var="question" items="${pageScope.questions}">
-                <hr>
-                <%
-                    Object question_id = ((JSONObject)pageContext.getAttribute("question")).get("question_id");
-                    Object question_content = ((JSONObject)pageContext.getAttribute("question")).get("question");
-                    Object type = ((JSONObject)pageContext.getAttribute("question")).get("type");
-
-                    pageContext.setAttribute("question_id", question_id);
-                    pageContext.setAttribute("question_content", question_content);
-                    pageContext.setAttribute("type", type);
-                %>
-                ${count}.${pageScope.question_content}
-                <br>
-                <c:if test="${pageScope.type eq \"slc\"}">
+            <c:set var="count" value="1" scope="session"/>
+            <form action="/questionnaire.action?action=submit" method="post">
+                <c:forEach var="question" items="${pageScope.questions}">
+                    <hr>
                     <%
-                        Object options = ((JSONObject)pageContext.getAttribute("question")).get("options");
+                        Object question_id = ((JSONObject) pageContext.getAttribute("question")).get("question_id");
+                        Object question_content = ((JSONObject) pageContext.getAttribute("question")).get("question");
+                        Object type = ((JSONObject) pageContext.getAttribute("question")).get("type");
 
-                        pageContext.setAttribute("options", options);
+                        pageContext.setAttribute("question_id", question_id);
+                        pageContext.setAttribute("question_content", question_content);
+                        pageContext.setAttribute("type", type);
                     %>
-                    <c:forEach var="option" items="${pageScope.options}">
+                    ${count}.${pageScope.question_content}
+                    <br>
+                    <c:if test="${pageScope.type eq \"slc\"}">
                         <%
-                            Object mark = ((JSONObject)pageContext.getAttribute("option")).get("mark");
-                            Object content = ((JSONObject)pageContext.getAttribute("option")).get("content");
+                            Object options = ((JSONObject) pageContext.getAttribute("question")).get("options");
 
-                            pageContext.setAttribute("mark", mark);
-                            pageContext.setAttribute("content", content);
+                            pageContext.setAttribute("options", options);
                         %>
-                        <input type="radio" name="${pageScope.question_id}" value="${pageScope.mark}">${pageScope.mark}.${pageScope.content}
-                        <br>
-                    </c:forEach>
-                </c:if>
-                <c:if test="${pageScope.type eq \"blk\"}">
-                    <textarea name="${pageScope.question_id}" id="" cols="73" rows="10"></textarea>
-                </c:if>
-                <c:set var="count" value="${count + 1}"/>
-            </c:forEach>
-            <div class="fill"></div>
+                        <c:forEach var="option" items="${pageScope.options}">
+                            <%
+                                Object mark = ((JSONObject) pageContext.getAttribute("option")).get("mark");
+                                Object content = ((JSONObject) pageContext.getAttribute("option")).get("content");
 
+                                pageContext.setAttribute("mark", mark);
+                                pageContext.setAttribute("content", content);
+                            %>
+                            <input type="radio" name="c${count}a"
+                                   value="${pageScope.mark}">${pageScope.mark}.${pageScope.content}
+                            <br>
+                            <input type="hidden" name="c${count}qid" value="${pageScope.question_id}">
+                        </c:forEach>
+                    </c:if>
+                    <c:if test="${pageScope.type eq \"blk\"}">
+                        <textarea name="c${count}a" id="" cols="73" rows="10"></textarea>
+                        <input type="hidden" name="c${count}qid" value="${pageScope.question_id}">
+                    </c:if>
+                    <c:set var="count" value="${count + 1}" scope="session"/>
+                </c:forEach>
+                <div class="fill"></div>
+                <input type="submit" value="提交">
+            </form>
+            <div class="fill"></div>
         </div>
     </div>
 </div>
