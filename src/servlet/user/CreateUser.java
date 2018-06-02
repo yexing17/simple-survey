@@ -26,7 +26,7 @@ public class CreateUser extends HttpServlet {
         }
         else {
             request.getSession().setAttribute("reg-info", "注册失败!注册邮箱已经被使用!");
-            response.sendRedirect("reg.jsp");
+            response.sendRedirect("auth.jsp");
         }
     }
 

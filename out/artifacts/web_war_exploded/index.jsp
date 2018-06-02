@@ -20,7 +20,7 @@
                     out.print("<li style='float: right'><a href='index.jsp?logout=true'>退出登录</a></li><li style='float: right'><a href='/user'>用户中心</a></li>");
                 }
                 else {
-                    out.print("<li style='float: right'><a href='login.jsp'>登录</a></li>");
+                    out.print("<li style='float: right'><a href='auth.jsp'>登录</a></li>");
                 }
                 String logout = (String)request.getParameter("logout");
                 if (logout != null) {

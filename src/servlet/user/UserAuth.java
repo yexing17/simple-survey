@@ -27,12 +27,12 @@ public class UserAuth extends HttpServlet {
             }
             else {
                 request.getSession().setAttribute("login-info", "登录失败!密码错误!");
-                response.sendRedirect("login.jsp");
+                response.sendRedirect("auth.jsp");
             }
         }
         else {
             request.getSession().setAttribute("login-info", "登录失败!当前用户不存在!");
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("auth.jsp");
         }
     }
 
