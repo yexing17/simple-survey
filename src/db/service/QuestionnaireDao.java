@@ -27,9 +27,9 @@ public class QuestionnaireDao {
         JSONArray questions = (JSONArray) questionnaire.get("questions");
         count = MySQLHelper.excuteUpdate(sql_insert_qn, user_id, title, description);
         qn_id = MySQLHelper.getLastInsertId();
-        for (Object q:
-             questions) {
-            JSONObject question = (JSONObject)q;
+        for (Object q :
+                questions) {
+            JSONObject question = (JSONObject) q;
 
             int question_id;
             String sql_insert_question = "insert into questions(qn_id, question, type) values(?, ?, ?)";
@@ -66,9 +66,9 @@ public class QuestionnaireDao {
         MySQLHelper.getConnection();
         List<Object[]> list_cols = MySQLHelper.excuteQuery(sql);
 
-        for (Object[] col:
-             list_cols) {
-            Questionnaire qn = new Questionnaire(Integer.parseInt(col[0].toString()), col[1].toString(), (Date)col[2]);
+        for (Object[] col :
+                list_cols) {
+            Questionnaire qn = new Questionnaire(Integer.parseInt(col[0].toString()), col[1].toString(), (Date) col[2]);
             list_qns.add(qn);
         }
         MySQLHelper.closeConnection();
@@ -89,29 +89,29 @@ public class QuestionnaireDao {
 
         String sql_query_qn = "select title, description from questionnaires where qn_id = " + qn_id;
         List<Object[]> list_cols = MySQLHelper.excuteQuery(sql_query_qn);
-        for (Object[] col:
-             list_cols) {
+        for (Object[] col :
+                list_cols) {
             title = col[0].toString();
             description = col[1].toString();
         }
 
         String sql_query_question = "select question_id, question, type from questions where qn_id = " + qn_id;
         list_cols = MySQLHelper.excuteQuery(sql_query_question);
-        for (Object[] col:
-             list_cols) {
+        for (Object[] col :
+                list_cols) {
             JSONObject question = new JSONObject();
 
-            int question_id = (int)col[0];
-            String question_content = (String)col[1];
-            String type = (String)col[2];
+            int question_id = (int) col[0];
+            String question_content = (String) col[1];
+            String type = (String) col[2];
 
 
             if (Objects.equals(type, "slc")) {
                 JSONArray options = new JSONArray();
                 String sql_query_options = "select mark, content from options where question_id = " + question_id;
                 list_cols = MySQLHelper.excuteQuery(sql_query_options);
-                for (Object[] col2:
-                     list_cols) {
+                for (Object[] col2 :
+                        list_cols) {
                     JSONObject option = new JSONObject();
 
                     option.put("mark", col2[0]);
@@ -122,7 +122,7 @@ public class QuestionnaireDao {
                 question.put("options", options);
             }
 
-            question.put("question_id", (int)col[0]);
+            question.put("question_id", (int) col[0]);
             question.put("question", (String) col[1]);
             question.put("type", (String) col[2]);
             questions.add(question);
@@ -137,10 +137,5 @@ public class QuestionnaireDao {
         MySQLHelper.closeConnection();
 
         return qn;
-    }
-
-    public static void main(String[] args) {
-        QuestionnaireDao dao = new QuestionnaireDao();
-        System.out.println(dao.getQuestionnaireByQnId(11));;
     }
 }

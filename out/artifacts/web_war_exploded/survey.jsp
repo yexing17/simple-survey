@@ -41,7 +41,7 @@
                 <div>${pageScope.description}</div>
             </div>
             <c:set var="count" value="1" scope="session"/>
-            <form action="/questionnaire.action?action=submit" method="post">
+            <form action="/receipt.action" method="post">
                 <c:forEach var="question" items="${pageScope.questions}">
                     <hr>
                     <%

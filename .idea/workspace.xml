@@ -9,11 +9,12 @@
     <bookmark url="file://$PROJECT_DIR$/src/db/util/MySQLHelper.java" line="143" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="867413ea-c49e-474a-b026-ed35c3c2e9b4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/servlet/receipt/ServletReceipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlet/qn/ServletQuestionnaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/qn/ServletQuestionnaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/survey.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/survey.jsp" afterDir="false" />
+    <list default="true" id="867413ea-c49e-474a-b026-ed35c3c2e9b4" name="Default" comment="add">
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/survey.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/survey.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/service/ReceiptDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/service/ReceiptDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/servlet/receipt/ServletReceipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/receipt/ServletReceipt.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,10 +28,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.54935944">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="survey.jsp" pinned="false" current-in-tab="true">
+          <file leaf-file-name="survey.jsp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/survey.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-518">
+                <state relative-caret-position="196">
                   <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
                 </state>
               </provider>
@@ -63,29 +64,30 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ServletQuestionnaire.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/servlet/qn/ServletQuestionnaire.java">
+          <file leaf-file-name="ServletReceipt.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/servlet/receipt/ServletReceipt.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+                <state relative-caret-position="204">
+                  <caret line="22" selection-start-line="22" selection-end-line="22" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ServletReceipt.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/servlet/receipt/ServletReceipt.java">
+          <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-                </state>
+                <state relative-caret-position="-36" />
               </provider>
             </entry>
           </file>
           <file leaf-file-name="ReceiptDao.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/db/service/ReceiptDao.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+                <state relative-caret-position="332">
+                  <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -97,8 +99,8 @@
           <file leaf-file-name="QuestionnaireDao.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/db/service/QuestionnaireDao.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="278">
-                  <caret line="79" selection-start-line="79" selection-end-line="79" />
+                <state relative-caret-position="-476">
+                  <caret line="13" selection-start-line="13" selection-end-line="13" />
                 </state>
               </provider>
             </entry>
@@ -145,16 +147,16 @@
         <option value="$PROJECT_DIR$/web/user/analysis.jsp" />
         <option value="$PROJECT_DIR$/src/db/entity/Questionnaire.java" />
         <option value="$PROJECT_DIR$/src/test.json" />
-        <option value="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/user/list.jsp" />
         <option value="$PROJECT_DIR$/src/db/util/MySQLHelper.java" />
         <option value="$PROJECT_DIR$/src/servlet/CommonHelper.java" />
-        <option value="$PROJECT_DIR$/src/db/service/ReceiptDao.java" />
         <option value="$PROJECT_DIR$/src/servlet/qn/ServletQuestionnaire.java" />
-        <option value="$PROJECT_DIR$/src/servlet/receipt/ServletReceipt.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/survey.jsp" />
+        <option value="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" />
+        <option value="$PROJECT_DIR$/src/db/service/ReceiptDao.java" />
+        <option value="$PROJECT_DIR$/src/servlet/receipt/ServletReceipt.java" />
       </list>
     </option>
   </component>
@@ -485,7 +487,7 @@
       <workItem from="1527490372070" duration="6548000" />
       <workItem from="1527571874608" duration="9179000" />
       <workItem from="1527825684687" duration="122000" />
-      <workItem from="1527900725891" duration="6223000" />
+      <workItem from="1527900725891" duration="7489000" />
     </task>
     <task id="LOCAL-00001" summary="ttt">
       <created>1527472102598</created>
@@ -536,15 +538,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527907767241</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix 将对 receipt 的 control 层数据从 qn 中分离">
+      <created>1527908196263</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1527908196263</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84230000" />
+    <option name="totallyTimeSpent" value="85496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5019531" side_tool="true" weight="0.38783783" />
@@ -565,10 +573,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49804688" visible="true" weight="0.32297298" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49804688" weight="0.32297298" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49501" visible="true" weight="0.1360677" />
-      <window_info id="Web" order="2" sideWeight="0.50499004" side_tool="true" visible="true" weight="0.1360677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49594596" visible="true" weight="0.1360677" />
+      <window_info id="Web" order="2" sideWeight="0.50405407" side_tool="true" visible="true" weight="0.1360677" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -622,7 +630,8 @@
     <MESSAGE value="ttt" />
     <MESSAGE value="add:&#10;jsp 中使用 java 语句配合 pageContext 对象以及 el jstl 表达式来显示 json 对象内容&#10;fix:&#10;Web 与 MySQL 之间数据交换时的编码问题,具体解决方案参见文档" />
     <MESSAGE value="update 完善数据处理逻辑&#10;&#10;details:&#10;完成了回执数据-&gt;JSONObject 数据的转化" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 完善数据处理逻辑&#10;&#10;details:&#10;完成了回执数据-&gt;JSONObject 数据的转化" />
+    <MESSAGE value="fix 将对 receipt 的 control 层数据从 qn 中分离" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix 将对 receipt 的 control 层数据从 qn 中分离" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -910,17 +919,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/service/QuestionnaireDao.java">
+    <entry file="file://$PROJECT_DIR$/web/survey.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="196">
+          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/service/ReceiptDao.java">
+    <entry file="file://$PROJECT_DIR$/src/servlet/qn/ServletQuestionnaire.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="264">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
         </state>
       </provider>
     </entry>
@@ -931,32 +940,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/qn/ServletQuestionnaire.java">
+    <entry file="file://$PROJECT_DIR$/src/db/service/QuestionnaireDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+        <state relative-caret-position="-476">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/service/ReceiptDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/receipt/ServletReceipt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+        <state relative-caret-position="204">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/survey.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
-          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
-        </state>
+        <state relative-caret-position="-36" />
       </provider>
     </entry>
   </component>

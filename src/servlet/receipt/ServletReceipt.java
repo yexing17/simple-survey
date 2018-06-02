@@ -1,5 +1,6 @@
 package servlet.receipt;
 
+import db.service.ReceiptDao;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import servlet.CommonHelper;
@@ -19,12 +20,9 @@ public class ServletReceipt extends HttpServlet {
         int qn_id = Integer.parseInt((String)request.getSession().getAttribute("qn_id"));
         String submit_ip = CommonHelper.getIp(request);
 
-        System.out.println(submit_ip);
-
         JSONArray answers = new JSONArray();
         // 这里获取到使用 c:set 标签生成的数字默认是 long 类型的
         int count = (int)(long)request.getSession().getAttribute("count");
-        System.out.println(count);
         // 因为 count 是写在循环语句的最尾部自增的,所有 count 的数值会比所有真是用于题目标号的数值 +1
         for (int i = 1; i < count; i++) {
             JSONObject answer = new JSONObject();
@@ -42,7 +40,12 @@ public class ServletReceipt extends HttpServlet {
         receipt.put("submit_ip", submit_ip);
         receipt.put("answers", answers);
 
-        System.out.println(receipt);
+        ReceiptDao dao = new ReceiptDao();
+
+        dao.addReceipt(receipt);
+
+        // TODO:some pages show some info after submit
+        response.sendRedirect("");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
