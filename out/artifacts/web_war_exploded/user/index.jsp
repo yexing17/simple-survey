@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>用户面板</title>
+    <title>简单问卷-用户面板</title>
 
 <%@include file="common-head-contents.jsp"%>
 

@@ -4,9 +4,9 @@
     <div class="container-fluid">
         <div class="navbar">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.jsp">
-                    <i class="im-windows8 text-logo-element animated bounceIn"></i><span
-                        class="text-logo">简单</span><span class="text-slogan">问卷</span>
+                <a class="navbar-brand" href="/">
+                    <i class="im-windows8 text-logo-element animated bounceIn"></i>
+                    <span class="text-logo">简单</span><span class="text-slogan">问卷</span>
                 </a>
             </div>
             <nav class="top-nav" role="navigation">
@@ -27,7 +27,7 @@
                             </li>
                             <li><a href="#"><i class="st-settings"></i>设置</a>
                             </li>
-                            <li><a href="/auth.jsp"><i class="im-exit"></i>登出</a>
+                            <li><a href="/user.action?action=logout"><i class="im-exit"></i>登出</a>
                             </li>
                         </ul>
                     </li>

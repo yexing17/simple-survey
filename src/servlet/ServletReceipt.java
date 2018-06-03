@@ -1,9 +1,9 @@
-package servlet.receipt;
+package servlet;
 
 import db.service.ReceiptDao;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import servlet.CommonHelper;
+import servlet.util.CommonHelper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

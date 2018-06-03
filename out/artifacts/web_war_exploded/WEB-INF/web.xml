@@ -16,30 +16,21 @@
         <url-pattern>/servlet-generate-validatecode</url-pattern>
     </servlet-mapping>
 
-    <!-- servlet for user auth -->
+    <!-- servlet for user -->
     <servlet>
-        <servlet-name>UserAuth</servlet-name>
-        <servlet-class>servlet.user.UserAuth</servlet-class>
+        <servlet-name>User</servlet-name>
+        <servlet-class>servlet.ServletUser</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>UserAuth</servlet-name>
-        <url-pattern>/user-auth</url-pattern>
+        <servlet-name>User</servlet-name>
+        <url-pattern>/user.action</url-pattern>
     </servlet-mapping>
 
-    <!-- servlet for user auth -->
-    <servlet>
-        <servlet-name>CreateUser</servlet-name>
-        <servlet-class>servlet.user.CreateUser</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CreateUser</servlet-name>
-        <url-pattern>/create-user</url-pattern>
-    </servlet-mapping>
 
     <!-- servlet for questionnaire -->
     <servlet>
         <servlet-name>Questionnaire</servlet-name>
-        <servlet-class>servlet.qn.ServletQuestionnaire</servlet-class>
+        <servlet-class>servlet.ServletQuestionnaire</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Questionnaire</servlet-name>
@@ -49,7 +40,7 @@
     <!-- servlet for questionnaire -->
     <servlet>
         <servlet-name>Receipt</servlet-name>
-        <servlet-class>servlet.receipt.ServletReceipt</servlet-class>
+        <servlet-class>servlet.ServletReceipt</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Receipt</servlet-name>

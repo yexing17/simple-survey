@@ -72,7 +72,7 @@
             <div class="tab-pane fade active in" id="log-in">
                 <div class="seperator">
                 </div>
-                <form class="form-horizontal mt10" action="user-auth" id="login-form" role="form">
+                <form class="form-horizontal mt10" action="/user.action?action=auth" id="login-form" role="form" method="post">
                     <div class="form-group">
                         <div class="col-lg-12">
                             <input type="email" name="email" id="email" class="form-control left-icon" value="" placeholder="你的邮箱" required>
@@ -99,7 +99,7 @@
                 </form>
             </div>
             <div class="tab-pane fade" id="register">
-                <form class="form-horizontal mt20" action="/create-user" id="register-form" role="form">
+                <form class="form-horizontal mt20" action="/user.action?action=create" id="register-form" role="form" method="post">
                     <div class="form-group">
                         <div class="col-lg-12">
                             <!-- col-lg-12 start here -->

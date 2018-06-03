@@ -1,4 +1,4 @@
-package servlet;
+package servlet.util;
 
 import javax.servlet.http.HttpServletRequest;
 
