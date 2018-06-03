@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="navbar">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index-new.jsp">
+                <a class="navbar-brand" href="index.jsp">
                     <i class="im-windows8 text-logo-element animated bounceIn"></i><span
                         class="text-logo">简单</span><span class="text-slogan">问卷</span>
                 </a>
@@ -21,7 +21,7 @@
                 <ul class="nav navbar-nav pull-right">
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown">
-                            <img class="user-avatar" src="/assets/img/avatars/avatar-deafault.jpg" alt="SuggeElson">EmailAddressHere</a>
+                            <img class="user-avatar" src="/assets/img/avatars/avatar-deafault.jpg" alt="SuggeElson">${sessionScope.email}</a>
                         <ul class="dropdown-menu right" role="menu">
                             <li><a href="profile.html"><i class="st-user"></i>个人信息</a>
                             </li>
@@ -39,54 +39,7 @@
         <div id="header-area" class="fadeInDown">
             <div class="header-area-inner">
                 <ul class="list-unstyled list-inline">
-                    <li>
-                        <div class="shortcut-button">
-                            <a href="#">
-                                <i class="im-pie"></i>
-                                <span>Earning Stats</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="shortcut-button">
-                            <a href="#">
-                                <i class="ec-images color-dark"></i>
-                                <span>Gallery</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="shortcut-button">
-                            <a href="#">
-                                <i class="en-light-bulb color-orange"></i>
-                                <span>Fresh ideas</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="shortcut-button">
-                            <a href="#">
-                                <i class="ec-link color-blue"></i>
-                                <span>Links</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="shortcut-button">
-                            <a href="#">
-                                <i class="ec-support color-red"></i>
-                                <span>Support</span>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="shortcut-button">
-                            <a href="#">
-                                <i class="st-lock color-teal"></i>
-                                <span>Lock area</span>
-                            </a>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -108,20 +61,29 @@
                     </button>
                 </form>
             </li>
-            <li><a href="index-new.jsp">用户面板<i class="im-screen"></i></a>
+            <li>
+                <a href="index-new.jsp">用户面板<i class="im-screen"></i></a>
             </li>
-            <li><a href="charts.html">Charts <i class="st-chart"></i></a>
+            <li>
+                <a href="add.jsp">创建问卷<i class="im-plus"></i></a>
+            </li>
+            <li>
+                <a href="list.jsp">所有问卷<i class="im-paragraph-justify"></i></a>
             </li>
             <li>
                 <a href="#"> Forms <i class="im-paragraph-justify"></i></a>
                 <ul class="nav sub">
-                    <li><a href="forms.html"><i class="ec-pencil2"></i> Form Stuff</a>
+                    <li>
+                        <a href="forms.html"><i class="ec-pencil2"></i> Form Stuff</a>
                     </li>
-                    <li><a href="form-validation.html"><i class="im-checkbox-checked"></i> Form Validation</a>
+                    <li>
+                        <a href="form-validation.html"><i class="im-checkbox-checked"></i> Form Validation</a>
                     </li>
-                    <li><a href="form-wizard.html"><i class="im-wand"></i> Form Wizard</a>
+                    <li>
+                        <a href="form-wizard.html"><i class="im-wand"></i> Form Wizard</a>
                     </li>
-                    <li><a href="wysiwyg.html"><i class="fa-pencil"></i> WYSIWYG editor</a>
+                    <li>
+                        <a href="wysiwyg.html"><i class="fa-pencil"></i> WYSIWYG editor</a>
                     </li>
                 </ul>
             </li>
@@ -219,45 +181,11 @@
                 </ul>
             </li>
             <li>
-                <a href="#">Bonus <i class="im-gift"></i></a>
-                <ul class="nav sub">
-                    <li><a href="landing.html"><i class="im-airplane"></i> Landing page</a>
-                    </li>
-                </ul>
+                <a href="langding.html">导航页<i class="im-airplane"></i></a>
             </li>
         </ul>
         <!-- End #sideNav -->
         <!-- Start .sidebar-panel -->
-        <div class="sidebar-panel">
-            <h4 class="sidebar-panel-title"><i class="im-fire"></i> Server usage</h4>
-            <div class="sidebar-panel-content">
-                <ul class="server-stats">
-                    <li>
-                        <span class="txt">Disk space</span>
-                        <span class="percent">78</span>
-                        <div id="usage-sparkline" class="sparkline">Loading...</div>
-                        <div class="pie-chart" data-percent="78"></div>
-                    </li>
-                </ul>
-                <ul class="server-stats">
-                    <li>
-                        <span class="txt">CPU</span>
-                        <span class="percent">56</span>
-                        <div id="cpu-sparkline" class="sparkline">Loading...</div>
-                        <div class="pie-chart" data-percent="56"></div>
-                    </li>
-                </ul>
-                <ul class="server-stats">
-                    <li>
-                        <span class="txt">Memory</span>
-                        <span class="percent">14</span>
-                        <div id="ram-sparkline" class="sparkline">Loading...</div>
-                        <div class="pie-chart" data-percent="14"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- End .sidebar-panel -->
     </div>
     <!-- End .sidebar-inner -->
 </div>

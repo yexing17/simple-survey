@@ -21,7 +21,7 @@ public class UserAuth extends HttpServlet {
             if (password_db.equals(password)) {
                 String user_id = dao.getUser_id(email);
                 request.getSession().setAttribute("user_id", user_id);
-                request.getSession().setAttribute("user", email);
+                request.getSession().setAttribute("email", email);
                 request.getSession().setAttribute("login-info", null);
                 response.sendRedirect("/user");
             }

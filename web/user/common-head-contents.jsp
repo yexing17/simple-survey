@@ -4,10 +4,10 @@
 <!-- Force IE9 to render in normal mode -->
 <!--[if IE]>
 <meta http-equiv="x-ua-compatible" content="IE=9"/><![endif]-->
-<meta name="author" content="yx17"/>
+<meta name="author" content="SuggeElson yx17 FranLin"/>
 <meta name="description" content="It's a open-source seuvey system depend on jakartaee"/>
 <meta name="keywords" content="survey test questionnaire system javaee"/>
-<meta name="application-name" content="sprFlat admin template"/>
+<meta name="application-name" content="simple survey"/>
 <!-- Import google fonts - Heading first/ text second -->
 <link rel='stylesheet' type='text/css'/>
 <!--[if lt IE 9]>
