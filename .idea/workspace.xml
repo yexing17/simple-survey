@@ -7,15 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="867413ea-c49e-474a-b026-ed35c3c2e9b4" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/web/user/template.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/assets/js/jquery.sprFlat.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/jquery.sprFlat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/auth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/auth.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/user/common-header-sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/user/common-header-sidebar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/user/common-javascripts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/user/common-javascripts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/user/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/user/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/user/list.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,8 +38,8 @@
           <file leaf-file-name="list.jsp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/user/list.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="206">
-                  <caret line="43" column="33" selection-start-line="39" selection-end-line="49" selection-end-column="44" />
+                <state relative-caret-position="223">
+                  <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -455,7 +448,7 @@
       <workItem from="1527571874608" duration="9179000" />
       <workItem from="1527825684687" duration="122000" />
       <workItem from="1527900725891" duration="7489000" />
-      <workItem from="1527909379497" duration="34893000" />
+      <workItem from="1527909379497" duration="35668000" />
     </task>
     <task id="LOCAL-00001" summary="ttt">
       <created>1527472102598</created>
@@ -569,11 +562,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528009675206</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update:list.jsp, add:init the add-new.jsp &amp; template.jsp&#10;details:&#10;完成了 list.jsp 的前端适配&#10;完成了 add-new.jsp 的初始化&#10;新增了一个 template.jsp 作为模板方便下次需要是使用(in /user),其中对需要修改的地方有很长的 ------ 标记,或者 fix_ 开头的文本内容">
+      <created>1528037019952</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1528037019952</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120389000" />
+    <option name="totallyTimeSpent" value="121164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
@@ -664,7 +664,8 @@
     <MESSAGE value="update 重新组织 User 相关 Servlet,add 向新的 ServletUser 中加入注销登陆功能,add 新增一个模板打造的 index.jsp" />
     <MESSAGE value="update 清理了一些无用的代码和文件" />
     <MESSAGE value="update 调整 MySQLHelper 类的组织结构,完善注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 调整 MySQLHelper 类的组织结构,完善注释" />
+    <MESSAGE value="update:list.jsp, add:init the add-new.jsp &amp; template.jsp&#10;details:&#10;完成了 list.jsp 的前端适配&#10;完成了 add-new.jsp 的初始化&#10;新增了一个 template.jsp 作为模板方便下次需要是使用(in /user),其中对需要修改的地方有很长的 ------ 标记,或者 fix_ 开头的文本内容" />
+    <option name="LAST_COMMIT_MESSAGE" value="update:list.jsp, add:init the add-new.jsp &amp; template.jsp&#10;details:&#10;完成了 list.jsp 的前端适配&#10;完成了 add-new.jsp 的初始化&#10;新增了一个 template.jsp 作为模板方便下次需要是使用(in /user),其中对需要修改的地方有很长的 ------ 标记,或者 fix_ 开头的文本内容" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1051,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/user/list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="43" column="33" selection-start-line="39" selection-end-line="49" selection-end-column="44" />
+        <state relative-caret-position="223">
+          <caret line="44" column="31" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
         </state>
       </provider>
     </entry>
