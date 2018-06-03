@@ -7,13 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
-    public static void main(String[] args) {
-        UserDao dao = new UserDao();
-
-        User user = new User("1@1.1", "123456");
-        int count = dao.addUser(user);
-    }
-
     public List<User> getAllUser() {
         List<User> list_users = new ArrayList<>();
         String sql = "select * from users";
