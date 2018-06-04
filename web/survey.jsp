@@ -234,7 +234,7 @@
                                     <div class="col-lg-4">
                                     </div>
                                     <div class="col-lg-4">
-                                        <button type="button" class="btn btn-lg btn-success btn-block">提交问卷</button>
+                                        <button type="submit" class="btn btn-lg btn-success btn-block">提交问卷</button>
                                     </div>
                                     <div class="col-lg-4">
                                     </div>
@@ -268,10 +268,7 @@
         <div class="row mt50 mb50">
             <!-- Start .row -->
             <div class="col-md-12 footer-links">
-                <a href="#features" class="goTo">Features</a>
-                <a href="#testimonials" class="goTo">Testomonials</a>
                 <a href="https://hisun.me" target="_blank">Blog</a>
-                <a href="http://themes.suggelab.com/?product=sprflat" target="_blank">Demo</a>
                 <a href="#top" class="back-to-top">Back to Top</a>
                 <p>&copy;2018 FranLin</p>
             </div>
