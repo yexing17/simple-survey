@@ -6,15 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="867413ea-c49e-474a-b026-ed35c3c2e9b4" name="Default" comment="update:survey.jsp&#10;details:&#10;survey,换用新的前端,其余无变化">
+    <list default="true" id="867413ea-c49e-474a-b026-ed35c3c2e9b4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/survey.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/survey.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/add.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlet/ServletQuestionnaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/ServletQuestionnaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/delete-reg.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web/survey.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/survey.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/user/add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/user/add.jsp" afterDir="false" />
     </list>
@@ -27,50 +20,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.50390625">
+    <splitter split-orientation="horizontal" split-proportion="0.5891927">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="survey-old.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/survey-old.jsp">
+          <file leaf-file-name="survey.jsp" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/web/survey.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="299">
-                  <caret line="77" column="57" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="auth.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/auth.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-974">
-                  <caret line="59" column="66" selection-start-line="59" selection-start-column="66" selection-end-line="59" selection-end-column="66" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="add.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/user/add.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="250">
-                  <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ServletQuestionnaire.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/servlet/ServletQuestionnaire.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-120">
-                  <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="QuestionnaireDao.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/db/service/QuestionnaireDao.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="126" column="37" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
+                <state relative-caret-position="366">
+                  <caret line="222" selection-start-line="222" selection-end-line="222" />
                 </state>
               </provider>
             </entry>
@@ -79,20 +36,20 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="survey.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/survey.jsp">
+          <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/index.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="132" column="34" selection-start-line="132" selection-start-column="34" selection-end-line="132" selection-end-column="34" />
+                <state relative-caret-position="1440">
+                  <caret line="243" column="10" selection-start-line="243" selection-start-column="10" selection-end-line="243" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/web/index.jsp">
+          <file leaf-file-name="survey-old.jsp" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/web/survey-old.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+                <state relative-caret-position="97">
+                  <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -176,10 +133,10 @@
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/servlet/ServletUser.java" />
         <option value="$PROJECT_DIR$/web/survey-new.jsp" />
-        <option value="$PROJECT_DIR$/web/survey.jsp" />
-        <option value="$PROJECT_DIR$/web/user/add.jsp" />
         <option value="$PROJECT_DIR$/src/servlet/ServletQuestionnaire.java" />
         <option value="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" />
+        <option value="$PROJECT_DIR$/web/user/add.jsp" />
+        <option value="$PROJECT_DIR$/web/survey.jsp" />
       </list>
     </option>
   </component>
@@ -262,6 +219,12 @@
               <item name="jakartaee-survey-system" type="b2602c69:ProjectViewProjectNode" />
               <item name="jakartaee-survey-system" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jakartaee-survey-system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jakartaee-survey-system" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jakartaee-survey-system" type="b2602c69:ProjectViewProjectNode" />
@@ -510,7 +473,7 @@
       <workItem from="1527900725891" duration="7489000" />
       <workItem from="1527909379497" duration="36409000" />
       <workItem from="1528072068447" duration="13352000" />
-      <workItem from="1528104883261" duration="10409000" />
+      <workItem from="1528104883261" duration="17288000" />
     </task>
     <task id="LOCAL-00001" summary="ttt">
       <created>1527472102598</created>
@@ -645,11 +608,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528091626757</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="update:survey.jsp,!add.jsp,Questionnaire.java,ServletQuestionnaire.java&#10;&#10;details:&#10;survey.jsp,换用新的前端,且只实现了 title 和 description 的获取,TODO:用一个表单来显示 JSON 包裹的问卷数据并提供提交功能&#10;!add.jsp,激动人心的改动,选择题前端手动 jq 实现了动态选项数量,TODO:见 add.jsp 的待办事项&#10;Questionnaire.java,ServletQuestionnaire.java:和 add.jsp 相关修的一些修复,参见代码修改">
+      <created>1528121446681</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1528121446681</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145666000" />
+    <option name="totallyTimeSpent" value="152545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
@@ -674,9 +644,9 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49804688" visible="true" weight="0.3189189" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49804688" visible="true" weight="0.3189189" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81557375" visible="true" weight="0.16927083" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81557375" weight="0.17773438" />
       <window_info id="Web" order="2" sideWeight="0.18442623" side_tool="true" weight="0.27249023" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -691,8 +661,9 @@
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32993197" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49804688" visible="true" weight="0.3189189" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49804688" visible="true" weight="0.3189189" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -700,24 +671,23 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019531" side_tool="true" weight="0.38783783" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32837838" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.81557375" visible="true" weight="0.18945312" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32837838" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81557375" visible="true" weight="0.16927083" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="7" sideWeight="0.18442623" side_tool="true" weight="0.27249023" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Structure" order="1" sideWeight="0.5017361" side_tool="true" weight="0.27770534" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32837838" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
     </layout-to-restore>
   </component>
@@ -743,7 +713,8 @@
     <MESSAGE value="update:list.jsp, add:init the add-new.jsp &amp; template.jsp&#10;details:&#10;完成了 list.jsp 的前端适配&#10;完成了 add-new.jsp 的初始化&#10;新增了一个 template.jsp 作为模板方便下次需要是使用(in /user),其中对需要修改的地方有很长的 ------ 标记,或者 fix_ 开头的文本内容" />
     <MESSAGE value="add:template.jsp&#10;details:&#10;上次提交忘记把这个文件 git add 了,这次算补交" />
     <MESSAGE value="update:add.jsp &amp; template.jsp,fix:redirect to /user/index.jsp&#10;details:&#10;add.jsp 换用全新前端&#10;template.jsp 删除冗余代码,增加一个 ico fix_项&#10;因为如果不是对应到左边框完全一致的 url 时,不会触发相应的当前页面特殊前端效果,所以将所有重定向到 /user 的页面统一修改为完整的 /user/index.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="update:add.jsp &amp; template.jsp,fix:redirect to /user/index.jsp&#10;details:&#10;add.jsp 换用全新前端&#10;template.jsp 删除冗余代码,增加一个 ico fix_项&#10;因为如果不是对应到左边框完全一致的 url 时,不会触发相应的当前页面特殊前端效果,所以将所有重定向到 /user 的页面统一修改为完整的 /user/index.jsp" />
+    <MESSAGE value="update:survey.jsp,!add.jsp,Questionnaire.java,ServletQuestionnaire.java&#10;&#10;details:&#10;survey.jsp,换用新的前端,且只实现了 title 和 description 的获取,TODO:用一个表单来显示 JSON 包裹的问卷数据并提供提交功能&#10;!add.jsp,激动人心的改动,选择题前端手动 jq 实现了动态选项数量,TODO:见 add.jsp 的待办事项&#10;Questionnaire.java,ServletQuestionnaire.java:和 add.jsp 相关修的一些修复,参见代码修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="update:survey.jsp,!add.jsp,Questionnaire.java,ServletQuestionnaire.java&#10;&#10;details:&#10;survey.jsp,换用新的前端,且只实现了 title 和 description 的获取,TODO:用一个表单来显示 JSON 包裹的问卷数据并提供提交功能&#10;!add.jsp,激动人心的改动,选择题前端手动 jq 实现了动态选项数量,TODO:见 add.jsp 的待办事项&#10;Questionnaire.java,ServletQuestionnaire.java:和 add.jsp 相关修的一些修复,参见代码修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -906,13 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/user/common-javascripts.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/user/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -946,24 +910,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/survey.jsp">
+    <entry file="file://$PROJECT_DIR$/web/user/common-header-sidebar.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="132" column="34" selection-start-line="132" selection-start-column="34" selection-end-line="132" selection-end-column="34" />
+        <state relative-caret-position="1088">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/service/QuestionnaireDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="126" column="37" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/ServletQuestionnaire.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/survey-old.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="77" column="57" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
+        <state relative-caret-position="1440">
+          <caret line="243" column="10" selection-start-line="243" selection-start-column="10" selection-end-line="243" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -974,31 +945,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/user/common-header-sidebar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/user/add.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+        <state relative-caret-position="709">
+          <caret line="164" column="32" selection-start-line="164" selection-start-column="32" selection-end-line="164" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/ServletQuestionnaire.java">
+    <entry file="file://$PROJECT_DIR$/web/user/common-javascripts.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="47" column="61" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+        <state relative-caret-position="386">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/service/QuestionnaireDao.java">
+    <entry file="file://$PROJECT_DIR$/web/survey-old.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="126" column="37" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
+        <state relative-caret-position="97">
+          <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/survey.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="222" selection-start-line="222" selection-end-line="222" />
         </state>
       </provider>
     </entry>

@@ -36,13 +36,15 @@
     <!-- Mobile specific metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Force IE9 to render in normal mode -->
-    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <!--[if IE]>
+    <meta http-equiv="x-ua-compatible" content="IE=9"/><![endif]-->
     <meta name="author" content="SuggeElson yx17 FranLin"/>
     <meta name="description" content="It's a open-source seuvey system depend on jakartaee"/>
     <meta name="keywords" content="survey test questionnaire system javaee"/>
     <meta name="application-name" content="simple survey"/>
     <!-- Import google fonts - Heading first/ text second -->
-    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' />
+    <link rel='stylesheet' type='text/css'
+          href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Droid+Sans:400,700'/>
     <!--[if lt IE 9]>
     <![endif]-->
 
@@ -52,11 +54,11 @@
     <!-- jQueryUI -->
     <link href="assets/css/sprflat-theme/jquery.ui.all.css" rel="stylesheet"/>
     <!-- Bootstrap stylesheets (included template modifications) -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Main stylesheets (template main css file) -->
-    <link href="assets/css/landing.css" rel="stylesheet" />
+    <link href="assets/css/landing.css" rel="stylesheet"/>
     <!-- Custom stylesheets ( Put your own changes here ) -->
-    <link href="assets/css/custom-landing.css" rel="stylesheet" />
+    <link href="assets/css/custom-landing.css" rel="stylesheet"/>
     <!-- Plugins stylesheets (all plugin custom css) -->
     <link href="assets/css/plugins.css" rel="stylesheet"/>
     <!-- Main stylesheets (template main css file) -->
@@ -70,7 +72,7 @@
     <link rel="apple-touch-icon-precomposed" href="assets/img/ico/apple-touch-icon-57-precomposed.png">
     <link rel="icon" href="assets/img/ico/favicon.ico" type="image/png">
     <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
-    <meta name="msapplication-TileColor" content="#3399cc" />
+    <meta name="msapplication-TileColor" content="#3399cc"/>
 </head>
 <body>
 <div id="top" class="landing-intro" role="main">
@@ -81,7 +83,7 @@
             <div class="col-md-6 col-sm-12 text-center">
                 <!-- Start .logo -->
                 <div class="logo">
-                    <a href="landing.html">
+                    <a href="/">
                         <img src="assets/img/logo-no-ico.png" alt="logo" width="130px" height="50px">
                         <p class="slogan hidden-sm hidden-xs">问卷
                             <br>本该简单</p>
@@ -94,7 +96,8 @@
                     <ul>
                         <c:if test="${not empty sessionScope.user_id}">
                             <li>
-                                <a class="btn btn-white btn-alt" href="/user.action?action=logout" target="_blank">登出</a>
+                                <a class="btn btn-white btn-alt" href="/user.action?action=logout"
+                                   target="_blank">登出</a>
                             </li>
                             <li>
                                 <a class="btn btn-white btn-alt" href="/user/index.jsp">用户中心</a>
@@ -102,7 +105,7 @@
                         </c:if>
                         <c:if test="${empty sessionScope.user_id}">
                             <li>
-                                <a class="btn btn-white btn-alt" href="/auth.jsp" >登陆/注册</a>
+                                <a class="btn btn-white btn-alt" href="/auth.jsp">登陆/注册</a>
                             </li>
                         </c:if>
                     </ul>
@@ -134,30 +137,129 @@
 
 <!-- Start section-features -->
 <div id="features" class="section-features">
-    <!-- Start clean-code section -->
+    <!-- Start qn section -->
     <section id="clean-code" class="clean-code features-row">
         <div class="container">
-            <div class="text-center">
-                <h3 class="section-header-1">What do you need to get your project,
-                    <br class="hidden-sm hidden-xs">up and running fast?</h3>
-            </div>
+
+            <!-- Start .row -->
             <div class="row">
-                <!-- Start .row -->
-                <div class="col-md-8 col-sm-8">
-                    <img class="img-responsive center-block" src="assets/img/landing/features/cleancode.png" alt="Clean code">
+                <div class="col-lg-12">
+                    <!-- Start col-lg-12 -->
+                    <div class="panel panel-default toggle">
+                        <!-- Start .panel -->
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                提交问卷前请确认所有内容已经填写完整
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal group-border hover-stripped" role="form" id="validate"
+                                  action="/receipt.action" method="post">
+                                <!-- init the question count -->
+                                <c:set var="count" value="1" scope="session"/>
+
+                                <!-- start:get the qn's details -->
+                                <c:forEach var="question" items="${pageScope.questions}">
+                                    <!-- start:fetch from json and set to pageContext -->
+                                    <%
+                                        Object question_id = ((JSONObject) pageContext.getAttribute("question")).get("question_id");
+                                        Object question_content = ((JSONObject) pageContext.getAttribute("question")).get("question");
+                                        Object type = ((JSONObject) pageContext.getAttribute("question")).get("type");
+
+                                        pageContext.setAttribute("question_id", question_id);
+                                        pageContext.setAttribute("question_content", question_content);
+                                        pageContext.setAttribute("type", type);
+                                    %>
+                                    <!-- start:fetch from json and set to pageContext -->
+
+                                    <!-- start:display a question-->
+                                    <div class="form-group">
+                                        <!-- start:common section,count and title of question -->
+                                        <div class="col-lg-10 col-md-10">
+                                            <h3 class="section-header">
+                                                    ${count}.${pageScope.question_content}
+                                            </h3>
+                                        </div>
+
+                                        <!-- start:different section,question's answer filed,depend on type of ques -->
+
+                                        <!-- start:if this is a slc(select) -->
+                                        <c:if test="${pageScope.type eq \"slc\"}">
+                                            <%
+                                                Object options = ((JSONObject) pageContext.getAttribute("question")).get("options");
+
+                                                pageContext.setAttribute("options", options);
+                                            %>
+                                            <div class="col-lg-12 col-md-10">
+                                                <c:forEach var="option" items="${pageScope.options}">
+                                                    <%
+                                                        Object mark = ((JSONObject) pageContext.getAttribute("option")).get("mark");
+                                                        Object content = ((JSONObject) pageContext.getAttribute("option")).get("content");
+
+                                                        pageContext.setAttribute("mark", mark);
+                                                        pageContext.setAttribute("content", content);
+                                                    %>
+                                                    <label class="radio">
+                                                        <input type="radio" name="radio" value="${pageScope.mark}">${pageScope.mark}.${pageScope.content}
+                                                    </label>
+                                                    <input type="hidden" name="c${count}qid" value="${pageScope.question_id}">
+                                                </c:forEach>
+                                            </div>
+
+                                        </c:if>
+                                        <!-- end:if this is a slc(select) -->
+
+                                        <!-- start:if this is a blk(blank) -->
+                                        <c:if test="${pageScope.type eq \"blk\"}">
+                                            <div class="col-lg-10 col-md-10">
+                                            <textarea class="form-control limitTextarea" maxlength="250"
+                                                      rows="3" name="c${count}a"></textarea>
+                                            </div>
+                                            <input type="hidden" name="c${count}qid" value="${pageScope.question_id}">
+                                        </c:if>
+                                        <!-- start:if this is a blk(blank) -->
+
+                                        <!-- start:different section,question's answer filed,depend on type of ques -->
+
+                                        <!-- increase the count -->
+                                        <c:set var="count" value="${count + 1}" scope="session"/>
+                                    </div>
+                                    <!-- end:display a question-->
+
+                                </c:forEach>
+                                <!-- end:get the qn's details -->
+
+                                <!-- start:submit button -->
+                                <div class="form-group">
+                                    <div class="col-lg-4">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" class="btn btn-lg btn-success btn-block">提交问卷</button>
+                                    </div>
+                                    <div class="col-lg-4">
+                                    </div>
+                                </div>
+                                <!-- end:submit button -->
+                            </form>
+                        </div>
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                提交问卷前请确认所有内容已经填写完整
+                            </h3>
+                        </div>
+                    </div>
+                    <!-- End .panel -->
                 </div>
-                <div class="col-md-4 col-sm-4">
-                    <h3 class="section-header">Clean code</h3>
-                    <p>All code blocks are property commented and seperated for easy management and integration</p>
-                    <p>Tab indent 4 is used for good visual understanding</p>
-                    <p>Directories , images and all other assets is placed in intuitive named directories</p>
-                </div>
+                <!-- End col-lg-12 -->
             </div>
             <!-- End .row -->
         </div>
     </section>
-    <!-- End clean-code section -->
+    <!-- End qn section -->
 </div>
+
+<!-- rm qn object for refresh -->
+<c:remove var="qn"/>
 
 <!-- End section-features -->
 <!-- Start Footer -->
@@ -198,6 +300,18 @@
 <![endif]-->
 <!-- Bootstrap plugins -->
 <script src="assets/js/bootstrap/bootstrap.js"></script>
+<!-- Core plugins ( not remove ever) -->
+<!-- Handle responsive view functions -->
+<script src="assets/js/jRespond.min.js"></script>
+<!-- Custom scroll for sidebars,tables and etc. -->
+<script src="assets/plugins/core/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="assets/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+<!-- Resize text area in most pages -->
+<script src="assets/plugins/forms/autosize/jquery.autosize.js"></script>
+<!-- Proivde quick search for many widgets -->
+<script src="assets/plugins/core/quicksearch/jquery.quicksearch.js"></script>
+<!-- Bootbox confirm dialog for reset postion on panels -->
+<script src="assets/plugins/ui/bootbox/bootbox.js"></script>
 <!-- Other plugins ( load only nessesary plugins for every page) -->
 <!-- start:plugins for landing -->
 <script src="assets/plugins/ui/waypoint/waypoints.js"></script>
@@ -223,13 +337,11 @@
 <script src="assets/plugins/forms/dual-list-box/jquery.bootstrap-duallistbox.js"></script>
 <script src="assets/plugins/forms/password/jquery-passy.js"></script>
 <script src="assets/plugins/forms/checkall/jquery.checkAll.js"></script>
-<script src="assets/plugins/forms/validation/jquery.validate.js"></script>
-<script src="assets/plugins/forms/validation/additional-methods.min.js"></script>
 <script src="assets/plugins/misc/highlight/highlight.pack.js"></script>
 <script src="assets/plugins/misc/countTo/jquery.countTo.js"></script>
 <script src="assets/js/jquery.sprFlat.js"></script>
 <script src="assets/js/app.js"></script>
-<script src="assets/js/pages/form-validation.js"></script>
+<script src="assets/js/pages/forms.js"></script>
 <!-- end:plugins for form -->
 
 </body>

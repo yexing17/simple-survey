@@ -40,8 +40,8 @@
         <!-- Start .outlet -->
         <div class="outlet">
             <!-- Page start here ( usual with .row ) -->
+            <!-- Start .row -->
             <div class="row">
-                <!-- Start .row -->
                 <div class="col-lg-12">
                     <!-- Start col-lg-12 -->
                     <div class="panel panel-default toggle">
