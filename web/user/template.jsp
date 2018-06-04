@@ -30,23 +30,11 @@
             <!-- Start .page-header -->
             <div class="col-lg-12 heading">
                 <!------------------------------------------- fix the breadcrub here ---------------------------------------->
-                <h1 class="page-header"><i class="im-screen"></i>fix_breadcrub_name</h1>
+                <h1 class="page-header"><i class="fix_ico_name"></i>fix_breadcrub_name</h1>
                 <!-- Start .breadcrumb -->
                 <ul id="crumb" class="breadcrumb">
                 </ul>
                 <!-- End .breadcrumb -->
-
-                                <!-- Start .option-buttons -->
-                <div class="option-buttons">
-                    <div class="btn-toolbar" role="toolbar">
-                        <div class="btn-group">
-                            <a href="/user/list.jsp" id="clear-localstorage" class="btn tip" title="刷新数据">
-                                <i class="ec-refresh color-red s24"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- End .option-buttons -->
 
                 <!------------------------------------------- flowing is optional ---------------------------------------->
                 <!-- Start .option-buttons -->

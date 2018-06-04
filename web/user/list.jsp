@@ -18,11 +18,14 @@
 </head>
 <body>
 
-<%@include file="common-header-sidebar.jsp" %>
-
+<!-- start:request newest qns data -->
 <c:if test="${empty qns}">
     <c:redirect url="/questionnaire.action?action=list"/>
 </c:if>
+<!-- end -->
+
+<%@include file="common-header-sidebar.jsp" %>
+
 
 <!-- Start #content -->
 <div id="content">
@@ -32,7 +35,7 @@
             <!-- Start .row -->
             <!-- Start .page-header -->
             <div class="col-lg-12 heading">
-                <h1 class="page-header"><i class="im-screen"></i>所有问卷</h1>
+                <h1 class="page-header"><i class="im-paragraph-justify"></i>所有问卷</h1>
                 <!-- Start .bredcrumb -->
                 <ul id="crumb" class="breadcrumb">
                 </ul>
@@ -118,6 +121,7 @@
 </div>
 <!-- End #content -->
 
+<!-- remove the qns data,ensure refresh can get newest data -->
 <c:remove var="qns"/>
 
 <%@ include file="common-javascripts.jsp" %>

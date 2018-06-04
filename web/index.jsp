@@ -68,7 +68,7 @@
                                         <a class="btn btn-white btn-alt" href="/user.action?action=logout" target="_blank">登出</a>
                                     </li>
                                     <li>
-                                        <a class="btn btn-white btn-alt" href="/user">用户中心</a>
+                                        <a class="btn btn-white btn-alt" href="/user/index.jsp">用户中心</a>
                                     </li>
                                 </c:if>
                                 <c:if test="${empty sessionScope.user_id}">

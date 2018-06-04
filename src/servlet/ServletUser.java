@@ -28,7 +28,7 @@ public class ServletUser extends HttpServlet {
                     request.getSession().setAttribute("user_id", user_id);
                     request.getSession().setAttribute("email", email);
                     request.getSession().setAttribute("login-info", null);
-                    response.sendRedirect("/user");
+                    response.sendRedirect("/user/index.jsp");
                 }
                 else {
                     request.getSession().setAttribute("login-info", "登录失败!密码错误!");
@@ -53,7 +53,7 @@ public class ServletUser extends HttpServlet {
                 request.getSession().setAttribute("user_id", user_id);
                 request.getSession().setAttribute("email", email);
                 request.getSession().setAttribute("reg-info", null);
-                response.sendRedirect("/user");
+                response.sendRedirect("/user/index.jsp");
             }
             else {
                 request.getSession().setAttribute("reg-info", "注册失败!注册邮箱已经被使用!");
