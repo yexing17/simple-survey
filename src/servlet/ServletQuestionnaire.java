@@ -84,7 +84,7 @@ public class ServletQuestionnaire extends HttpServlet {
             int qn_id = Integer.parseInt((String) request.getSession().getAttribute("qn_id"));
             JSONObject qn = dao.getQuestionnaireByQnId(qn_id);
             request.getSession().setAttribute("qn", qn);
-            response.sendRedirect("/");
+            response.sendRedirect("survey.jsp?id=" + qn_id);
         }
     }
 

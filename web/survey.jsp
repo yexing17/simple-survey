@@ -200,7 +200,7 @@
                                                         pageContext.setAttribute("content", content);
                                                     %>
                                                     <label class="radio">
-                                                        <input type="radio" name="radio" value="${pageScope.mark}">${pageScope.mark}.${pageScope.content}
+                                                        <input type="radio" name="c${count}a" value="${pageScope.mark}">${pageScope.mark}.${pageScope.content}
                                                     </label>
                                                     <input type="hidden" name="c${count}qid" value="${pageScope.question_id}">
                                                 </c:forEach>

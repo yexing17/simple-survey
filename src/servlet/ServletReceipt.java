@@ -45,7 +45,7 @@ public class ServletReceipt extends HttpServlet {
         dao.addReceipt(receipt);
 
         // TODO:some pages show some info after submit
-        response.sendRedirect("");
+        response.sendRedirect("/ ");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
