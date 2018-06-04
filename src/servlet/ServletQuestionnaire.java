@@ -44,20 +44,13 @@ public class ServletQuestionnaire extends HttpServlet {
                 JSONArray options = new JSONArray();
                 if (request.getParameter("q" + String.valueOf(i + 1) + "m1") != null) {
                     type = "slc";
-                    for (int j = 0; j < 4; j++) {
+                    for (int j = 1;; j++) {
                         JSONObject option = new JSONObject();
-                        String mark = "";
-                        if (j == 0) {
-                            mark = "A";
-                        } else if (j == 1) {
-                            mark = "B";
-                        } else if (j == 2) {
-                            mark = "C";
-                        } else if (j == 3) {
-                            mark = "D";
+                        String content = (String) request.getParameter("q" + String.valueOf(i + 1) + "m" + String.valueOf(j));
+                        if (content == null) {
+                            break;
                         }
-                        String content = (String) request.getParameter("q" + String.valueOf(i + 1) + "m" + String.valueOf(j + 1));
-                        option.put("mark", mark);
+                        option.put("mark", j);
                         option.put("content", content);
 
                         options.add(option);

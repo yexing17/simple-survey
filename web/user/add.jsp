@@ -48,7 +48,7 @@
                         <!-- Start .panel -->
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                添加题目:
+                                添加题目:(当前问题和选择题的选项添加之后无法删除,请谨慎,该问题将在后续更新解决)
                                 <button class="btn btn-primary" onclick="appendSelect()">
                                     <i class="en-plus">选择题</i>
                                 </button>
@@ -125,31 +125,28 @@
 <!-- addition js start -->
 <script>
     var count = 0;
+    var option_counts = [];
 
     function appendSelect() {
         count++;
-        var slc = "<div class=\"form-group\">\n" +
+        var slc = "<div class=\"form-group\" id='q" + count + "'>\n" +
             "    <label class=\"col-lg-2 control-label\">问题" + count + "</label>\n" +
-            "    <div class=\"col-lg-10\">\n" +
+            "    <div class=\"col-lg-9\">\n" +
             "        <input type=\"text\" class=\"form-control required\" name=\"question" + count + "\">\n" +
             "    </div>\n" +
-            "    <label class=\"col-lg-2 control-label\">选项A</label>\n" +
+            "    <button type=\"button\" class=\"btn btn-primary\" onclick=\"appendOption(" + count + ")\">\n" +
+            "       <i class=\"en-plus\">选项</i>\n" +
+            "    </button>" +
+            "    <label class=\"col-lg-2 control-label\">选项1</label>\n" +
             "    <div class=\"col-lg-4\">\n" +
             "        <input type=\"text\" class=\"form-control required\" name='q" + count + "m1'>\n" +
             "    </div>\n" +
-            "    <label class=\"col-lg-2 control-label\">选项B</label>\n" +
+            "    <label class=\"col-lg-2 control-label\">选项2</label>\n" +
             "    <div class=\"col-lg-4\">\n" +
             "        <input type=\"text\" class=\"form-control required\" name='q" + count + "m2'>\n" +
             "    </div>\n" +
-            "    <label class=\"col-lg-2 control-label\">选项C</label>\n" +
-            "    <div class=\"col-lg-4\">\n" +
-            "        <input type=\"text\" class=\"form-control required\" name='q" + count + "m3'>\n" +
-            "    </div>\n" +
-            "    <label class=\"col-lg-2 control-label\">选项D</label>\n" +
-            "    <div class=\"col-lg-4\">\n" +
-            "        <input type=\"text\" class=\"form-control required\" name='q" + count + "m4'>\n" +
-            "    </div>\n" +
             "</div>";
+        option_counts[count - 1] = 2;
         $("#validate").append(slc);
     }
 
@@ -162,6 +159,19 @@
             "    </div>\n" +
             "</div>";
         $("#validate").append(blk);
+        option_counts[count - 1] = 0;
+    }
+
+    function appendOption(q_count) {
+        var option_count = option_counts[q_count - 1] + 1;
+        option_counts[q_count - 1] = option_count;
+
+        var option_content = "<label class=\"col-lg-2 control-label\">选项" + option_count + "</label>\n" +
+            "                 <div class=\"col-lg-4\">\n" +
+            "                     <input type=\"text\" class=\"form-control required\" name='q" + (q_count - 1) + "m" + option_count + "'>\n" +
+            "                 </div>\n";
+        var id_name = "#q" + q_count;
+        $(id_name).append(option_content);
     }
 </script>
 </body>

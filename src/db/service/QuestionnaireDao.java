@@ -44,7 +44,7 @@ public class QuestionnaireDao {
                         options) {
                     JSONObject option = (JSONObject) o;
                     // get primary info of option
-                    String mark = (String) option.get("mark");
+                    String mark = option.get("mark").toString();
                     String content = (String) option.get("content");
 
                     String sql_insert_option = "insert into options(question_id, mark, content) values(?, ?, ?)";
@@ -122,9 +122,9 @@ public class QuestionnaireDao {
                 question.put("options", options);
             }
 
-            question.put("question_id", (int) col[0]);
-            question.put("question", (String) col[1]);
-            question.put("type", (String) col[2]);
+            question.put("question_id", question_id);
+            question.put("question", question_content);
+            question.put("type", type);
             questions.add(question);
         }
 
