@@ -67,18 +67,12 @@ public class Questionnaire {
         this.close_time = close_time;
     }
 
-    public Questionnaire(int qn_id, String title, Date create_time) {
+    public Questionnaire(int qn_id, String title,  Date create_time, Date release_time, Date close_time) {
         this.qn_id = qn_id;
         this.title = title;
         this.create_time = create_time;
-    }
-
-    public Questionnaire(int qn_id, int user_id, String title, String description, Date create_time) {
-        this.qn_id = qn_id;
-        this.user_id = user_id;
-        this.title = title;
-        this.description = description;
-        this.create_time = create_time;
+        this.release_time = release_time;
+        this.close_time= close_time;
     }
 
     public Questionnaire(int qn_id, int user_id, String title, String description, Date create_time, Date release_time, Date close_time) {

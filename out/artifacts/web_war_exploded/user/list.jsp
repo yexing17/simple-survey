@@ -73,6 +73,8 @@
                                     <th>问卷编号</th>
                                     <th>问卷名称</th>
                                     <th>创建时间</th>
+                                    <th>发布时间</th>
+                                    <th>关闭时间</th>
                                     <th>问卷管理</th>
                                 </tr>
                                 </thead>
@@ -83,13 +85,43 @@
                                         <td>${qn.title}</td>
                                         <td>${qn.create_time}</td>
                                         <td>
+                                            <c:if test="${empty qn.release_time}">
+                                                /
+                                            </c:if>
+                                            <c:if test="${not empty qn.release_time}">
+                                                ${qn.release_time}
+                                            </c:if>
+                                        </td>
+                                        <td>
+                                            <c:if test="${empty qn.close_time}">
+                                                /
+                                            </c:if>
+                                            <c:if test="${not empty qn.close_time}">
+                                                ${qn.close_time}
+                                            </c:if>
+                                        </td>
+                                        <td>
                                             <a href="/survey.jsp?id=${qn.qn_id}" target="_blank">
                                                 问卷链接
                                             </a>
-                                            <a href="#">
-                                                问卷发布
-                                            </a>
-                                            <a href="/user/analysis.jsp?id=${qn.qn_id}">
+                                            <c:if test="${empty qn.release_time}">
+                                                <a href="/questionnaire.action?action=release&id=${qn.qn_id}">
+                                                    问卷发布
+                                                </a>
+                                            </c:if>
+                                            <c:if test="${not empty qn.release_time}">
+                                                问卷已发布
+                                            </c:if>
+                                            <c:if test="${empty qn.close_time}">
+                                                <a href="/questionnaire.action?action=close&id=${qn.qn_id}">
+                                                    问卷关闭
+                                                </a>
+                                            </c:if>
+                                            <c:if test="${not empty qn.close_time}">
+                                                问卷已关闭
+                                            </c:if>
+
+                                            <a href="/analysis.jsp?id=${qn.qn_id}">
                                                 问卷统计
                                             </a>
                                         </td>
@@ -101,6 +133,8 @@
                                     <th>问卷编号</th>
                                     <th>问卷名称</th>
                                     <th>创建时间</th>
+                                    <th>发布时间</th>
+                                    <th>关闭时间</th>
                                     <th>问卷管理</th>
                                 </tr>
                                 </tfoot>

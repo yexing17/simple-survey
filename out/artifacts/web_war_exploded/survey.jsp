@@ -1,4 +1,5 @@
 <%@ page import="org.json.simple.JSONObject" %>
+<%@ page import="java.util.Objects" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -17,6 +18,16 @@
 </c:if>
 <!-- end:getting the qn json object by id -->
 
+<!-- start:get and set the status of qn -->
+<%
+    Object release_time = ((JSONObject) session.getAttribute("qn")).get("release_time");
+    Object close_time = ((JSONObject) session.getAttribute("qn")).get("close_time");
+
+    pageContext.setAttribute("release_time", release_time);
+    pageContext.setAttribute("close_time", close_time);
+%>
+<!-- end:get and set the status of qn -->
+
 <!-- start:fetching and setting the qn's attr objects to pageScope -->
 <%
     Object title = ((JSONObject) session.getAttribute("qn")).get("title");
@@ -31,7 +42,28 @@
 <head>
     <meta charset="utf-8">
     <!------------------------------------------- fix the blow title ---------------------------------------->
-    <title>简单问卷-${pageScope.title}</title>
+
+    <!-- start:html title -->
+    <!-- user question to show if the qn is null or not -->
+    <title>
+        <c:if test="${not empty pageScope.questions}">
+            <c:if test="${not empty pageScope.release_time}">
+                <c:if test="${empty pageScope.close_time}">
+                    简单问卷-${pageScope.title}
+                </c:if>
+                <c:if test="${not empty pageScope.close_time}">
+                    当前问卷已关闭
+                </c:if>
+            </c:if>
+            <c:if test="${empty pageScope.release_time}">
+                当前问卷暂未发布
+            </c:if>
+        </c:if>
+        <c:if test="${empty pageScope.questions}">
+            该问卷不存在
+        </c:if>
+    </title>
+    <!-- end:html title -->
 
     <!-- Mobile specific metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -116,15 +148,41 @@
 
         <!-- Start intro-slogan -->
         <div class="intro-slogan text-center animated fadeInDown">
-            <h1>
-                ${pageScope.title}
-            </h1>
-            <p>
-                ${pageScope.description}
-            </p>
-            <!--
-            <img class="img-responsive center-block center-block" src="assets/img/landing/sprflat.png" alt="spr flat admin">
-            -->
+            <!-- start:big title -->
+            <c:if test="${not empty pageScope.questions}">
+                <c:if test="${not empty pageScope.release_time}">
+                    <c:if test="${empty pageScope.close_time}">
+                        <h1>
+                                ${pageScope.title}
+                        </h1>
+                        <p>
+                                ${pageScope.description}
+                        </p>
+                    </c:if>
+                    <c:if test="${not empty pageScope.close_time}">
+                        <h1>
+                            当前问卷已关闭
+                        </h1>
+                        <p>
+                            如有疑问请询问管理员
+                        </p>
+                    </c:if>
+                </c:if>
+                <c:if test="${empty pageScope.release_time}">
+                    <h1>
+                        当前问卷尚未发布
+                    </h1>
+                    <p>
+                        如有疑问请询问管理员
+                    </p>
+                </c:if>
+            </c:if>
+            <c:if test="${empty pageScope.questions}">
+                <h1>该问卷不存在</h1>
+            </c:if>
+
+            <!-- end:big title -->
+
         </div>
         <!-- End intro-slogan -->
     </div>
@@ -149,103 +207,128 @@
                         <!-- Start .panel -->
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                提交问卷前请确认所有内容已经填写完整
+                                <!-- start:panel title -->
+                                <c:if test="${not empty pageScope.questions}">
+                                    <c:if test="${not empty pageScope.release_time}">
+                                        <c:if test="${empty pageScope.close_time}">
+                                            提交问卷前请确认所有内容已经填写完整
+                                        </c:if>
+                                        <c:if test="${not empty pageScope.close_time}">
+                                            当前问卷已关闭
+                                        </c:if>
+                                    </c:if>
+                                    <c:if test="${empty pageScope.release_time}">
+                                        当前问卷暂未发布
+                                    </c:if>
+                                </c:if>
+                                <c:if test="${empty pageScope.questions}">
+                                    该问卷不存在
+                                </c:if>
+                                <!-- end:panel title -->
                             </h3>
                         </div>
                         <div class="panel-body">
-                            <form class="form-horizontal group-border hover-stripped" role="form" id="validate"
-                                  action="/receipt.action" method="post">
-                                <!-- init the question count -->
-                                <c:set var="count" value="1" scope="session"/>
 
-                                <!-- start:get the qn's details -->
-                                <c:forEach var="question" items="${pageScope.questions}">
-                                    <!-- start:fetch from json and set to pageContext -->
-                                    <%
-                                        Object question_id = ((JSONObject) pageContext.getAttribute("question")).get("question_id");
-                                        Object question_content = ((JSONObject) pageContext.getAttribute("question")).get("question");
-                                        Object type = ((JSONObject) pageContext.getAttribute("question")).get("type");
+                            <!-- start:form -->
+                            <c:if test="${not empty pageScope.release_time}">
+                                <!-- 因为 404 的情况和未发布的情况显示一致,这里就不检测 questions 了 -->
+                                <c:if test="${empty pageScope.close_time}">
+                                    <form class="form-horizontal group-border hover-stripped" role="form" id="validate"
+                                          action="/receipt.action" method="post">
+                                        <!-- init the question count -->
+                                        <c:set var="count" value="1" scope="session"/>
 
-                                        pageContext.setAttribute("question_id", question_id);
-                                        pageContext.setAttribute("question_content", question_content);
-                                        pageContext.setAttribute("type", type);
-                                    %>
-                                    <!-- start:fetch from json and set to pageContext -->
-
-                                    <!-- start:display a question-->
-                                    <div class="form-group">
-                                        <!-- start:common section,count and title of question -->
-                                        <div class="col-lg-10 col-md-10">
-                                            <h3 class="section-header">
-                                                    ${count}.${pageScope.question_content}
-                                            </h3>
-                                        </div>
-
-                                        <!-- start:different section,question's answer filed,depend on type of ques -->
-
-                                        <!-- start:if this is a slc(select) -->
-                                        <c:if test="${pageScope.type eq \"slc\"}">
+                                        <!-- start:get the qn's details -->
+                                        <c:forEach var="question" items="${pageScope.questions}">
+                                            <!-- start:fetch from json and set to pageContext -->
                                             <%
-                                                Object options = ((JSONObject) pageContext.getAttribute("question")).get("options");
+                                                Object question_id = ((JSONObject) pageContext.getAttribute("question")).get("question_id");
+                                                Object question_content = ((JSONObject) pageContext.getAttribute("question")).get("question");
+                                                Object type = ((JSONObject) pageContext.getAttribute("question")).get("type");
 
-                                                pageContext.setAttribute("options", options);
+                                                pageContext.setAttribute("question_id", question_id);
+                                                pageContext.setAttribute("question_content", question_content);
+                                                pageContext.setAttribute("type", type);
                                             %>
-                                            <div class="col-lg-12 col-md-10">
-                                                <c:forEach var="option" items="${pageScope.options}">
+                                            <!-- start:fetch from json and set to pageContext -->
+
+                                            <!-- start:display a question-->
+                                            <div class="form-group">
+                                                <!-- start:common section,count and title of question -->
+                                                <div class="col-lg-10 col-md-10">
+                                                    <h3 class="section-header">
+                                                            ${count}.${pageScope.question_content}
+                                                    </h3>
+                                                </div>
+
+                                                <!-- start:different section,question's answer filed,depend on type of ques -->
+
+                                                <!-- start:if this is a slc(select) -->
+                                                <c:if test="${pageScope.type eq \"slc\"}">
                                                     <%
-                                                        Object mark = ((JSONObject) pageContext.getAttribute("option")).get("mark");
-                                                        Object content = ((JSONObject) pageContext.getAttribute("option")).get("content");
+                                                        Object options = ((JSONObject) pageContext.getAttribute("question")).get("options");
 
-                                                        pageContext.setAttribute("mark", mark);
-                                                        pageContext.setAttribute("content", content);
+                                                        pageContext.setAttribute("options", options);
                                                     %>
-                                                    <label class="radio">
-                                                        <input type="radio" name="c${count}a" value="${pageScope.mark}">${pageScope.mark}.${pageScope.content}
-                                                    </label>
-                                                    <input type="hidden" name="c${count}qid" value="${pageScope.question_id}">
-                                                </c:forEach>
-                                            </div>
+                                                    <div class="col-lg-12 col-md-10">
+                                                        <c:forEach var="option" items="${pageScope.options}">
+                                                            <%
+                                                                Object mark = ((JSONObject) pageContext.getAttribute("option")).get("mark");
+                                                                Object content = ((JSONObject) pageContext.getAttribute("option")).get("content");
 
-                                        </c:if>
-                                        <!-- end:if this is a slc(select) -->
+                                                                pageContext.setAttribute("mark", mark);
+                                                                pageContext.setAttribute("content", content);
+                                                            %>
+                                                            <label class="radio">
+                                                                <input type="radio" name="c${count}a" value="${pageScope.mark}">${pageScope.mark}.${pageScope.content}
+                                                            </label>
+                                                            <input type="hidden" name="c${count}qid" value="${pageScope.question_id}">
+                                                        </c:forEach>
+                                                    </div>
 
-                                        <!-- start:if this is a blk(blank) -->
-                                        <c:if test="${pageScope.type eq \"blk\"}">
-                                            <div class="col-lg-10 col-md-10">
+                                                </c:if>
+                                                <!-- end:if this is a slc(select) -->
+
+                                                <!-- start:if this is a blk(blank) -->
+                                                <c:if test="${pageScope.type eq \"blk\"}">
+                                                    <div class="col-lg-10 col-md-10">
                                             <textarea class="form-control limitTextarea" maxlength="250"
                                                       rows="3" name="c${count}a"></textarea>
+                                                    </div>
+                                                    <input type="hidden" name="c${count}qid" value="${pageScope.question_id}">
+                                                </c:if>
+                                                <!-- start:if this is a blk(blank) -->
+
+                                                <!-- start:different section,question's answer filed,depend on type of ques -->
+
+                                                <!-- increase the count -->
+                                                <c:set var="count" value="${count + 1}" scope="session"/>
                                             </div>
-                                            <input type="hidden" name="c${count}qid" value="${pageScope.question_id}">
-                                        </c:if>
-                                        <!-- start:if this is a blk(blank) -->
+                                            <!-- end:display a question-->
 
-                                        <!-- start:different section,question's answer filed,depend on type of ques -->
+                                        </c:forEach>
+                                        <!-- end:get the qn's details -->
 
-                                        <!-- increase the count -->
-                                        <c:set var="count" value="${count + 1}" scope="session"/>
-                                    </div>
-                                    <!-- end:display a question-->
+                                        <!-- start:submit button -->
+                                        <div class="form-group">
+                                            <div class="col-lg-4">
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <button type="submit" class="btn btn-lg btn-success btn-block">提交问卷</button>
+                                            </div>
+                                            <div class="col-lg-4">
+                                            </div>
+                                        </div>
+                                        <!-- end:submit button -->
+                                    </form>
+                                </c:if>
+                                <c:if test="${not empty pageScope.close_time}">
+                                </c:if>
+                            </c:if>
+                            <c:if test="${empty pageScope.release_time}">
+                            </c:if>
+                            <!-- start:form -->
 
-                                </c:forEach>
-                                <!-- end:get the qn's details -->
-
-                                <!-- start:submit button -->
-                                <div class="form-group">
-                                    <div class="col-lg-4">
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <button type="submit" class="btn btn-lg btn-success btn-block">提交问卷</button>
-                                    </div>
-                                    <div class="col-lg-4">
-                                    </div>
-                                </div>
-                                <!-- end:submit button -->
-                            </form>
-                        </div>
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                提交问卷前请确认所有内容已经填写完整
-                            </h3>
                         </div>
                     </div>
                     <!-- End .panel -->

@@ -62,13 +62,13 @@ public class QuestionnaireDao {
 
     public List<Questionnaire> getAllQuestionnaireByUserId(int user_id) {
         List<Questionnaire> list_qns = new ArrayList<>();
-        String sql = "select qn_id, title, create_time from questionnaires where user_id = " + user_id;
+        String sql = "select qn_id, title, create_time, release_time, close_time from questionnaires where user_id = " + user_id;
         MySQLHelper.getConnection();
         List<Object[]> list_cols = MySQLHelper.excuteQuery(sql);
 
         for (Object[] col :
                 list_cols) {
-            Questionnaire qn = new Questionnaire(Integer.parseInt(col[0].toString()), col[1].toString(), (Date) col[2]);
+            Questionnaire qn = new Questionnaire(Integer.parseInt(col[0].toString()), col[1].toString(), (Date) col[2], (Date) col[3], (Date) col[4]);
             list_qns.add(qn);
         }
         MySQLHelper.closeConnection();
@@ -80,6 +80,8 @@ public class QuestionnaireDao {
 
         String title = "";
         String description = "";
+        Date release_time = null;
+        Date close_time = null;
         JSONArray questions = new JSONArray();
 
         // 开始连接
@@ -87,12 +89,14 @@ public class QuestionnaireDao {
         // 该连接上的一个事务开始
         MySQLHelper.setAutoCommitFalse();
 
-        String sql_query_qn = "select title, description from questionnaires where qn_id = " + qn_id;
+        String sql_query_qn = "select title, description, release_time, close_time from questionnaires where qn_id = " + qn_id;
         List<Object[]> list_cols = MySQLHelper.excuteQuery(sql_query_qn);
         for (Object[] col :
                 list_cols) {
             title = col[0].toString();
             description = col[1].toString();
+            release_time = (Date) col[2];
+            close_time = (Date) col[3];
         }
 
         String sql_query_question = "select question_id, question, type from questions where qn_id = " + qn_id;
@@ -131,6 +135,8 @@ public class QuestionnaireDao {
         qn.put("qn_id", qn_id);
         qn.put("title", title);
         qn.put("description", description);
+        qn.put("release_time", release_time);
+        qn.put("close_time", close_time);
         qn.put("questions", questions);
 
         MySQLHelper.commit();
