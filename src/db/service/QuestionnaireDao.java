@@ -5,6 +5,7 @@ import db.util.MySQLHelper;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -143,5 +144,37 @@ public class QuestionnaireDao {
         MySQLHelper.closeConnection();
 
         return qn;
+    }
+
+    // 将指定 user_id 和 qn_id 下的 qn 的 release_time 设置为当前时间
+    public int setReleaseTime(int user_id, int qn_id) {
+        int effect_row = 0;
+
+        MySQLHelper.getConnection();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String date_now = df.format(new Date());
+        String sql = "update questionnaires " +
+                "set release_time = '" + date_now + "' " +
+                "where user_id = " + user_id + " and qn_id = " + qn_id;
+        MySQLHelper.excuteUpdate(sql);
+        MySQLHelper.closeConnection();
+
+        return effect_row;
+    }
+
+    // 将指定 user_id 和 qn_id 下的 qn 的 close_time 设置为当前时间
+    public int setCloseTime(int user_id, int qn_id) {
+        int effect_row = 0;
+
+        MySQLHelper.getConnection();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String date_now = df.format(new Date());
+        String sql = "update questionnaires " +
+                "set close_time = '" + date_now + "' " +
+                "where user_id = " + user_id + " and qn_id = " + qn_id;
+        MySQLHelper.excuteUpdate(sql);
+        MySQLHelper.closeConnection();
+
+        return effect_row;
     }
 }

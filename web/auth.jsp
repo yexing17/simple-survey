@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Yx17的问卷系统 - 用户登录</title>
+    <title>简单问卷-用户登录</title>
     <link rel="stylesheet" href="css/form.css">
     <!-- from template -->
     <meta charset="utf-8">

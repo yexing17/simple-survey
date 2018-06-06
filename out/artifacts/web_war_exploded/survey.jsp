@@ -178,7 +178,8 @@
                 </c:if>
             </c:if>
             <c:if test="${empty pageScope.questions}">
-                <h1>该问卷不存在</h1>
+                <h1>404</h1>
+                <p>该问卷不存在</p>
             </c:if>
 
             <!-- end:big title -->
