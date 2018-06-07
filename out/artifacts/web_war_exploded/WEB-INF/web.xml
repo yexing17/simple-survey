@@ -46,17 +46,6 @@
         <servlet-name>Receipt</servlet-name>
         <url-pattern>/receipt.action</url-pattern>
     </servlet-mapping>
-
-    <!-- servlet for questionnaire -->
-    <servlet>
-        <servlet-name>Analysis</servlet-name>
-        <servlet-class>servlet.ServletAnalysis</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Analysis</servlet-name>
-        <url-pattern>/analysis.action</url-pattern>
-    </servlet-mapping>
-
     <!-- servlet end -->
 
 

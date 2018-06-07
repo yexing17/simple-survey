@@ -22,7 +22,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.28" level="application_server_libraries" />
     <orderEntry type="library" name="mysql-connector-java-5.1.44-bin" level="project" />
     <orderEntry type="library" name="json-simple-1.1.1" level="project" />
-    <orderEntry type="library" name="jstl" level="project" />
-    <orderEntry type="library" name="standard" level="project" />
+    <orderEntry type="library" name="jstl" level="application" />
+    <orderEntry type="library" name="standard" level="application" />
   </component>
 </module>

@@ -1,5 +1,4 @@
 <%@ page import="org.json.simple.JSONObject" %>
-<%@ page import="java.util.Objects" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.

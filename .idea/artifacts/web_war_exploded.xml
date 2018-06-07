@@ -12,6 +12,8 @@
           <element id="library" level="project" name="json-simple-1.1.1" />
           <element id="library" level="project" name="jstl" />
           <element id="library" level="project" name="standard" />
+          <element id="library" level="application" name="jstl" />
+          <element id="library" level="application" name="standard" />
         </element>
       </element>
     </root>
