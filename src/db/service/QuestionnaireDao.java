@@ -2,6 +2,7 @@ package db.service;
 
 import db.entity.Questionnaire;
 import db.util.MySQLHelper;
+import db.util.TimeTool;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -20,13 +21,14 @@ public class QuestionnaireDao {
         // 该连接上的一个事务开始
         MySQLHelper.setAutoCommitFalse();
 
-        String sql_insert_qn = "insert into questionnaires(user_id, title, description) values(?, ?, ?)";
+        String sql_insert_qn = "insert into questionnaires(user_id, title, description, release_time) values(?, ?, ?, ?)";
         // get primary info of qn
         int user_id = (int) questionnaire.get("user_id");
         String title = (String) questionnaire.get("title");
         String description = (String) questionnaire.get("description");
+        String release_time = TimeTool.getDateTimeNowString();
         JSONArray questions = (JSONArray) questionnaire.get("questions");
-        count = MySQLHelper.excuteUpdate(sql_insert_qn, user_id, title, description);
+        count = MySQLHelper.excuteUpdate(sql_insert_qn, user_id, title, description, release_time);
         qn_id = MySQLHelper.getLastInsertId();
         for (Object q :
                 questions) {
@@ -151,8 +153,7 @@ public class QuestionnaireDao {
         int effect_row = 0;
 
         MySQLHelper.getConnection();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        String date_now = df.format(new Date());
+        String date_now = TimeTool.getDateTimeNowString();
         String sql = "update questionnaires " +
                 "set release_time = '" + date_now + "' " +
                 "where user_id = " + user_id + " and qn_id = " + qn_id;
@@ -167,8 +168,7 @@ public class QuestionnaireDao {
         int effect_row = 0;
 
         MySQLHelper.getConnection();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        String date_now = df.format(new Date());
+        String date_now = TimeTool.getDateTimeNowString();
         String sql = "update questionnaires " +
                 "set close_time = '" + date_now + "' " +
                 "where user_id = " + user_id + " and qn_id = " + qn_id;

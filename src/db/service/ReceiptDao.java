@@ -1,6 +1,7 @@
 package db.service;
 
 import db.util.MySQLHelper;
+import db.util.TimeTool;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -12,13 +13,14 @@ public class ReceiptDao {
         MySQLHelper.getConnection();
         MySQLHelper.setAutoCommitFalse();
 
-        String sql_insert_receipt = "insert into receipts(qn_id, submit_ip) values(?, ?)";
+        String sql_insert_receipt = "insert into receipts(qn_id, submit_time, submit_ip) values(?, ?, ?)";
 
         int qn_id = (int) receipt.get("qn_id");
+        String submit_time = TimeTool.getDateTimeNowString();
         String submit_ip = (String) receipt.get("submit_ip");
         JSONArray answers = (JSONArray) receipt.get("answers");
 
-        count = MySQLHelper.excuteUpdate(sql_insert_receipt, qn_id, submit_ip);
+        count = MySQLHelper.excuteUpdate(sql_insert_receipt, qn_id, submit_time, submit_ip);
 
         receipt_id = MySQLHelper.getLastInsertId();
         for (Object a :

@@ -9,9 +9,9 @@ import java.util.Properties;
 
 public class MySQLHelper {
     // start:初始化数据库连接相关对象为静态私有变量
-    private static String url = "jdbc:mysql://jd-bj-0.hisun.ml:3306/qnqnqn?useUnicode=true&characterEncoding=utf8";  // setting the encoding as UTF-8
+    private static String url = "jdbc:mysql://localhost:3306/qnqnqn?useUnicode=true&characterEncoding=utf8";  // setting the encoding as UTF-8
     private static String user = "qnqnqn";
-    private static String password = "jd-bj-0-qnqnqn-233";
+    private static String password = "123456";
     private static Connection connection = null;
     private static ResultSet resultSet = null;
     private static PreparedStatement preState = null;

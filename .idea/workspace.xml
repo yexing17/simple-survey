@@ -6,22 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="867413ea-c49e-474a-b026-ed35c3c2e9b4" name="Default" comment="update:list.jsp,Questionnaire.java,QuestionnaireDao.java,list.jsp&#10;&#10;details:&#10;survey.jsp,Questionnaire.java,QuestionnaireDao.java:增加了对 qn 的 questions 以及 release_time 和 close_time 检测,保证了只有已有问卷以及发布且未关闭状态下的问卷才能正确作答&#10;list.jsp:添加了 release_time 和 close_time 的显示,并增加发布和关闭功能">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
+    <list default="true" id="867413ea-c49e-474a-b026-ed35c3c2e9b4" name="Default" comment="Update QuestionDao.java, Receipt.java Add TimeTool.java, AnalysisDao.java, ServletAnalysis.java&#10;&#10;Details&#10;Initial analysis module,divide the time tool to one independence.">
+      <change afterPath="$PROJECT_DIR$/src/db/service/AnalysisDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/db/util/TimeTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/servlet/ServletAnalysis.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jee-demo-win.iml" beforeDir="false" afterPath="$PROJECT_DIR$/jee-demo-win.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/css/form.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/js/lib/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/survey.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/add.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/analysis.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/web_war_exploded/user/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/util/MySQLHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/survey.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/survey.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/service/ReceiptDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/service/ReceiptDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/util/MySQLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/util/MySQLHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,20 +35,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="918">
+              <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQLHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/db/util/MySQLHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-612">
+              <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4131">
               <caret line="243" column="10" selection-start-line="243" selection-start-column="10" selection-end-line="243" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -72,8 +74,17 @@
       <file leaf-file-name="QuestionnaireDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/db/service/QuestionnaireDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="175" column="38" selection-start-line="175" selection-start-column="38" selection-end-line="175" selection-end-column="38" />
+            <state relative-caret-position="187">
+              <caret line="30" column="97" selection-start-line="30" selection-start-column="97" selection-end-line="30" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReceiptDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/db/service/ReceiptDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="22" column="80" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -85,8 +96,8 @@
       <list>
         <option value="CSS File" />
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -108,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/web/user/new.jsp" />
         <option value="$PROJECT_DIR$/web/temp/login.html" />
         <option value="$PROJECT_DIR$/web/temp/buttons.html" />
@@ -117,7 +127,6 @@
         <option value="$PROJECT_DIR$/src/test.json" />
         <option value="$PROJECT_DIR$/src/servlet/CommonHelper.java" />
         <option value="$PROJECT_DIR$/src/servlet/qn/ServletQuestionnaire.java" />
-        <option value="$PROJECT_DIR$/src/db/service/ReceiptDao.java" />
         <option value="$PROJECT_DIR$/src/servlet/receipt/ServletReceipt.java" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/reg.jsp" />
@@ -154,11 +163,13 @@
         <option value="$PROJECT_DIR$/web/not-released.html" />
         <option value="$PROJECT_DIR$/web/is-closed.html" />
         <option value="$PROJECT_DIR$/web/auth.jsp" />
-        <option value="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" />
         <option value="$PROJECT_DIR$/src/servlet/ServletQuestionnaire.java" />
+        <option value="$PROJECT_DIR$/web/survey.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/db/util/MySQLHelper.java" />
-        <option value="$PROJECT_DIR$/web/survey.jsp" />
+        <option value="$PROJECT_DIR$/src/db/util/TimeTool.java" />
+        <option value="$PROJECT_DIR$/src/db/service/QuestionnaireDao.java" />
+        <option value="$PROJECT_DIR$/src/db/service/ReceiptDao.java" />
       </list>
     </option>
   </component>
@@ -210,24 +221,6 @@
             <path>
               <item name="simple-survey" type="b2602c69:ProjectViewProjectNode" />
               <item name="simple-survey" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simple-survey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simple-survey" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simple-survey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simple-survey" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="web_war_exploded" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simple-survey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simple-survey" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -235,6 +228,13 @@
               <item name="simple-survey" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simple-survey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simple-survey" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="simple-survey" type="b2602c69:ProjectViewProjectNode" />
@@ -246,7 +246,19 @@
             <path>
               <item name="simple-survey" type="b2602c69:ProjectViewProjectNode" />
               <item name="simple-survey" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simple-survey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simple-survey" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simple-survey" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simple-survey" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -269,11 +281,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git_lib\java\IdeaProjects\simple-survey\src\db\service" />
+      <recent name="D:\git_lib\java\IdeaProjects\simple-survey\src\servlet" />
       <recent name="D:\git_lib\java\IdeaProjects\jakartaee-survey-system\web\assets\img\landing" />
       <recent name="D:\git_lib\java\IdeaProjects\jakartaee-survey-system\web\assets\img" />
       <recent name="D:\git_lib\java\IdeaProjects\jakartaee-survey-system\web" />
-      <recent name="D:\git_lib\java\IdeaProjects\jakartaee-survey-system\web\user\assets\img" />
-      <recent name="D:\git_lib\java\IdeaProjects\jakartaee-survey-system\web\user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -545,7 +557,7 @@
       <workItem from="1528104883261" duration="19240000" />
       <workItem from="1528158686422" duration="11031000" />
       <workItem from="1528256371830" duration="6226000" />
-      <workItem from="1528345553654" duration="778000" />
+      <workItem from="1528345553654" duration="3210000" />
     </task>
     <task id="LOCAL-00001" summary="ttt">
       <created>1527472102598</created>
@@ -722,11 +734,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528186585971</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fix out/artifact&#10;&#10;Details&#10;Rebuilding the artifact content">
+      <created>1528346420432</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1528346420433</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172532000" />
+    <option name="totallyTimeSpent" value="174964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
@@ -744,15 +763,15 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.22162162" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.22162162" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49804688" visible="true" weight="0.25945947" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49804688" weight="0.25945947" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.44809687" visible="true" weight="0.1875" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.44809687" visible="true" weight="0.1875" />
       <window_info id="Web" order="2" sideWeight="0.5519031" side_tool="true" weight="0.1875" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -825,7 +844,9 @@
     <MESSAGE value="update:survey.jsp(fix+1)&#10;&#10;暂时把完成问卷之后的跳转修改为跳转到主页 /&#10;忘记把 button 的 type 改成 submit 以用于提交了&#10;details:&#10;survey.jsp,花几个小时调整出了一个不错的显示效果;&#10;坑:&#10;注意 JSs 还有 core plugins 需要选配(因为 common-javascripts.jsp 已经包括,template.jsp 不再修改,但是没有引用这个 common-javascripts.jsp 以应要注意);&#10;不要直接使用审查元素获得的代码,有可能是再编译过的样式" />
     <MESSAGE value="update:survey.jsp(fix+2)&#10;&#10;应该改的是 ServletReceipt.jsp 之前改错了&#10;暂时把完成问卷之后的跳转修改为跳转到主页 /&#10;忘记把 button 的 type 改成 submit 以用于提交了&#10;details:&#10;survey.jsp,花几个小时调整出了一个不错的显示效果;&#10;坑:&#10;注意 JSs 还有 core plugins 需要选配(因为 common-javascripts.jsp 已经包括,template.jsp 不再修改,但是没有引用这个 common-javascripts.jsp 以应要注意);&#10;不要直接使用审查元素获得的代码,有可能是再编译过的样式" />
     <MESSAGE value="update:list.jsp,Questionnaire.java,QuestionnaireDao.java,list.jsp&#10;&#10;details:&#10;survey.jsp,Questionnaire.java,QuestionnaireDao.java:增加了对 qn 的 questions 以及 release_time 和 close_time 检测,保证了只有已有问卷以及发布且未关闭状态下的问卷才能正确作答&#10;list.jsp:添加了 release_time 和 close_time 的显示,并增加发布和关闭功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="update:list.jsp,Questionnaire.java,QuestionnaireDao.java,list.jsp&#10;&#10;details:&#10;survey.jsp,Questionnaire.java,QuestionnaireDao.java:增加了对 qn 的 questions 以及 release_time 和 close_time 检测,保证了只有已有问卷以及发布且未关闭状态下的问卷才能正确作答&#10;list.jsp:添加了 release_time 和 close_time 的显示,并增加发布和关闭功能" />
+    <MESSAGE value="Fix out/artifact&#10;&#10;Details&#10;Rebuilding the artifact content" />
+    <MESSAGE value="Update QuestionDao.java, Receipt.java Add TimeTool.java, AnalysisDao.java, ServletAnalysis.java&#10;&#10;Details&#10;Initial analysis module,divide the time tool to one independence." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update QuestionDao.java, Receipt.java Add TimeTool.java, AnalysisDao.java, ServletAnalysis.java&#10;&#10;Details&#10;Initial analysis module,divide the time tool to one independence." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -837,11 +858,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/temp/tiles.html" />
-    <entry file="file://$PROJECT_DIR$/web/user/index-new.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/assets/img/logo-no-ico.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/db/entity/Option.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1048,31 +1064,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/util/MySQLHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/service/QuestionnaireDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="175" column="38" selection-start-line="175" selection-start-column="38" selection-end-line="175" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/survey.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4131">
-          <caret line="243" column="10" selection-start-line="243" selection-start-column="10" selection-end-line="243" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1089,10 +1084,51 @@
     <entry file="file://$PROJECT_DIR$/out/artifacts/web_war_exploded/survey.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4131">
+          <caret line="243" column="10" selection-start-line="243" selection-start-column="10" selection-end-line="243" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+        <state relative-caret-position="918">
+          <caret line="54" column="21" lean-forward="true" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/util/GetDateTimeNow.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/util/TimeTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/service/QuestionnaireDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="30" column="97" selection-start-line="30" selection-start-column="97" selection-end-line="30" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/service/ReceiptDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="80" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/db/util/MySQLHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1102,7 +1138,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited />
+          <last-edited>web:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
