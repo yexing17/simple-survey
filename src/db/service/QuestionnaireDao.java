@@ -6,7 +6,6 @@ import db.util.TimeTool;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,7 +20,7 @@ public class QuestionnaireDao {
         // 该连接上的一个事务开始
         MySQLHelper.setAutoCommitFalse();
 
-        String sql_insert_qn = "insert into questionnaires(user_id, title, description, release_time) values(?, ?, ?, ?)";
+        String sql_insert_qn = "insert into questionnaires(user_id, title, description, create_time) values(?, ?, ?, ?)";
         // get primary info of qn
         int user_id = (int) questionnaire.get("user_id");
         String title = (String) questionnaire.get("title");
